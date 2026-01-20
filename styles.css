@@ -1,0 +1,170 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+/* Header con buscador */
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background: #1f1f1f;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-container input {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-container button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #0078d7;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-container button:hover {
+  background: #005a9e;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background: #1f1f1f;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #eaeaea;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0078d7;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #0078d7;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Main */
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+main p {
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+/* Galería */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #1f1f1f;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  margin-bottom: 0.5rem;
+  color: #0078d7;
+}
+
+.card-content p {
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  background: #1f1f1f;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #0078d7;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+  }
+}
