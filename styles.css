@@ -5,11 +5,30 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #f5f5f5;
+  --nav-bg: #eaeaea;
+  --accent-color: #0078d7;
+  --muted-text: #555; /* color para textos secundarios */
+}
+
+/* Tema oscuro */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #eaeaea;
+  --card-bg: #1f1f1f;
+  --nav-bg: #1f1f1f;
+  --accent-color: #0078d7;
+  --muted-text: #ccc;
+}
+
 /* Estilo general */
 body {
   font-family: 'Poppins', sans-serif;
-  background: #121212;
-  color: #eaeaea;
+  background: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -18,7 +37,13 @@ header {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  background: #1f1f1f;
+  background: var(--nav-bg);
+}
+
+.logo-home {
+  width: 70px;
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 .search-container {
@@ -36,7 +61,7 @@ header {
 .search-container button {
   padding: 0.5rem 1rem;
   border: none;
-  background: #0078d7;
+  background: var(--accent-color);
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -52,14 +77,14 @@ nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  background: #1f1f1f;
+  background: var(--nav-bg);
   padding: 1rem;
   flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
-  color: #eaeaea;
+  color: var(--text-color);
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
@@ -72,12 +97,12 @@ nav a::after {
   left: 0;
   width: 0%;
   height: 2px;
-  background: #0078d7;
+  background: var(--accent-color);
   transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #0078d7;
+  color: var(--accent-color);
 }
 
 nav a:hover::after {
@@ -97,7 +122,7 @@ main h1 {
 
 main p {
   margin-bottom: 2rem;
-  color: #ccc;
+  color: var(--muted-text);
 }
 
 /* Galería */
@@ -108,7 +133,7 @@ main p {
 }
 
 .card {
-  background: #1f1f1f;
+  background: var(--card-bg);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
@@ -136,23 +161,23 @@ main p {
 
 .card-content h2 {
   margin-bottom: 0.5rem;
-  color: #0078d7;
+  color: var(--accent-color);
 }
 
 .card-content p {
-  color: #ccc;
+  color: var(--muted-text);
 }
 
 /* Footer */
 footer {
-  background: #1f1f1f;
+  background: var(--nav-bg);
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
 }
 
 footer a {
-  color: #0078d7;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -167,6 +192,9 @@ footer a {
   main h1 {
     font-size: 1.5rem;
   }
+
+  nav { gap: 0.5rem; }
+  nav a { font-size: 0.9rem; padding: 0.4rem; }
 }
 
 .search-container {
