@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Casados</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #e0f7fa;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Usuarios Casados</h2>
+    <ul id="listaCasados"></ul>
+  </div>
+
+  <script>
+    const users = [ 
+      {name:"Oscar", age:"24", casado: false}, 
+      {name:"Mario", age:"22", casado: true},
+      {name:"Dani", age:"35", casado: true} 
+    ];
+    
+    const nombresCasados = users
+      .filter(user => user.casado)
+      .map(user => user.name);
+
+    const lista = document.getElementById("listaCasados");
+    nombresCasados.forEach(nombre => {
+      const li = document.createElement("li");
+      li.textContent = nombre;
+      lista.appendChild(li);
+    });
+  </script>
+</body>
+</html>

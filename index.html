@@ -8,16 +8,22 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<button id="toggle-theme">🌙 / ☀️</button>
+
+
 <header>
+  <button id="toggle-theme" class="theme-toggle">
+  <p1> MODO</p1>
+  🌙 / ☀️ </button>
 
 
   <div class="search-container"> 
-    <input type="text" id="searchInput" placeholder="Buscar..." /> 
-    <button onclick="handleSearch()">🔍</button> 
- </div>
+<div class="search-container"> 
+  <input type="text" id="searchInput" placeholder="Buscar..." /> 
+  <button onclick="handleSearch()">🔍</button> 
+</div>
+<div id="searchResults"></div>
+ 
 
- <img class = "logo-home" src="public/img/LOGO RODMAN .png" alt="Logo de la página" class="logo">
 
  
 </header>
@@ -48,7 +54,7 @@
       </a>
       <div class="card-content">
         <h2>LOGOFOLIO</h2>
-        <p>Descripción breve de la sección 1, con un texto introductorio.</p>
+        <p>Imagotipos, logotipos, isotipos e identidades visuales para empresas y emprendimientos.</p>
       </div>
     </div>
 
@@ -58,17 +64,17 @@
       </a>
       <div class="card-content">
         <h2>FOTOGRAFÍA DE PRODUCTO</h2>
-        <p>Descripción breve de la sección 2, con un texto introductorio.</p>
+        <p>Trabajo de fotografía, manejo de iluminación y composición para resaltar productos.</p>
       </div>
     </div>
 
     <div class="card">
       <a href="pages/diseñoweb.html">
-        <img src="public/img/code.png" alt="Imagen sección 3">
+        <img src="public/img/codeee.png" alt="Imagen sección 3">
       </a>
       <div class="card-content">
         <h2>DISEÑO WEB</h2>
-        <p>Descripción breve de la sección 3, con un texto introductorio.</p>
+        <p>Landing pages y sitios web responsivos.</p>
       </div>
     </div>
 
@@ -96,6 +102,7 @@
   <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="contact.html">Contacto</a></p>
 </footer>
 <script src="js/main.js"></script>
+<script src="js/searchbar.js"></script>
 
 </body>
 </html>
