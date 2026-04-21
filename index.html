@@ -22,18 +22,15 @@
   <button onclick="handleSearch()">🔍</button> 
 </div>
 <div id="searchResults"></div>
- 
 
-
- 
 </header>
-    <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">Acerca de mí</a>
+ <nav>
+  <a href="//index.html">Home</a>
   <a href="services.html">Servicios</a>
-  <a href="portfolio.html">Portafolio de proyectos</a>
+  <a href="portfolio.html">Proyectos</a>
   <a href="contact.html">Contacto</a>
 </nav>
+    
 
 <main>
 
@@ -42,9 +39,14 @@
     me dedico a brindar soluciones graficas, audiovisuales y digitales proyectos, emprendimientos y empresas.
   </p>
 
-<hero>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+  
+    <a href="#portafolio" class="btn">Ver Portafolio</a>
+  </div>
+</section>
 
-</hero>
 
   <section class="gallery">
     
@@ -59,15 +61,16 @@
     </div>
 
     <div class="card">
-      <a href="pages/audiovisual.html">
-        <img src="public/img/Captura de pantalla 2026-01-22 a la(s) 4.37.09 p.m..png" alt="Imagen sección 2">
-      </a>
-      <div class="card-content">
-        <h2>FOTOGRAFÍA DE PRODUCTO</h2>
+      <a href="pages/audiovisual.html"> </a>
+       <div class="carousel">
+  <img src="public/img/fotodeproducto.jpg" alt="Imagen sección 2" class="active">
+  <img src="public/img/delya-ambientado.jpg" alt="Imagen sección 2">
+</div>
+    <div class="card-content">
+        <h2>FOTOGRAFÍA </h2>
         <p>Trabajo de fotografía, manejo de iluminación y composición para resaltar productos.</p>
       </div>
     </div>
-
     <div class="card">
       <a href="pages/diseñoweb.html">
         <img src="public/img/codeee.png" alt="Imagen sección 3">
@@ -89,7 +92,7 @@
     </div>
 
     <div class="card">
-      <img src="public/img/LOGO RODMAN .png" alt="Imagen sección 3">
+      <img class="card-images" src="public/img/motion.gif" alt="Imagen sección 3">
       <div class="card-content">
         <h2>MOTION GRAPHICS</h2>
         <p>Descripción breve de la sección 3, con un texto introductorio.</p>

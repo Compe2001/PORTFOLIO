@@ -1,3 +1,33 @@
+
+//carrusel
+document.addEventListener("DOMContentLoaded", () => {
+  const carousels = document.querySelectorAll(".carousel");
+
+  carousels.forEach(carousel => {
+    const images = carousel.querySelectorAll("img");
+    let currentIndex = 0;
+
+    // Mostrar la primera imagen
+    images[currentIndex].classList.add("active");
+
+    setInterval(() => {
+      // Ocultar la actual
+      images[currentIndex].classList.remove("active");
+
+      // Avanzar al siguiente índice
+      currentIndex = (currentIndex + 1) % images.length;
+
+      // Mostrar la nueva con fade
+      images[currentIndex].classList.add("active");
+    }, 5000); // cada 5 segundos
+  });
+});
+
+
+
+
+
+
 const btn = document.getElementById("toggle-theme");
 
 btn.addEventListener("click", () => {
@@ -16,3 +46,5 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add("dark-mode");
   }
 });
+
+
