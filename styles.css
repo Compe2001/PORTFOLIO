@@ -1,4 +1,4 @@
- /* Reset básico */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@
   --card-bg: #f5f5f5;
   --nav-bg: #eaeaea;
   --accent-color: #0078d7;
-  --muted-text: #555; /* color para textos secundarios */
+  --muted-text: #555;
 }
 
 /* Tema oscuro */
@@ -38,6 +38,8 @@ header {
   display: flex;
   padding: 1rem;
   background: var(--nav-bg);
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo-home {
@@ -49,9 +51,12 @@ header {
 .search-container {
   display: flex;
   gap: 0.5rem;
+  width: 300px;
+  height: 50px;
 }
 
 .search-container input {
+  flex: 1;
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -65,11 +70,12 @@ header {
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .search-container button:hover {
   background: #005a9e;
+  transform: scale(1.05);
 }
 
 /* Navbar */
@@ -79,17 +85,14 @@ nav {
   gap: 2rem;
   background: var(--nav-bg);
   padding: 1rem;
-
 }
 
 nav a {
-  width: 100%;
-  margin-top: 0.5rem;
-	padding: 0.3rem 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #909090;
+  position: relative;
+  padding: 0.3rem 0;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 nav a::after {
@@ -118,7 +121,7 @@ main {
 }
 
 main h1 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
   margin-bottom: 1rem;
 }
 
@@ -127,24 +130,26 @@ main p {
   color: var(--muted-text);
 }
 
-/*carrusel */
+/* Carrusel */
+.carousel {
+  position: relative;
+}
+
 .carousel img {
-  display: none;
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
-  transition: opacity 1s ease-in-out; /* duración y suavidad */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .carousel img.active {
-  display: block;
-   opacity: 1;
+  opacity: 1;
   z-index: 1;
 }
-
-
-
 
 /* Galería */
 .gallery {
@@ -159,13 +164,13 @@ main p {
   max-height: 500px;
   max-width: 400px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .card img {
@@ -178,12 +183,12 @@ main p {
 }
 
 .theme-toggle {
-  position: lefy;
+  position: absolute;
   top: 1rem;
   right: 1rem;
   background: var(--nav-bg);
   border: none;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
   color: var(--text-color);
@@ -191,12 +196,11 @@ main p {
 
 .card-content {
   padding: 1rem;
-  min-height: 1200px;
-
+  min-height: 200px;
 }
 
 .card-content h2 {
-  margin-bottom: 1.0rem;
+  margin-bottom: 1rem;
   color: var(--accent-color);
 }
 
@@ -229,18 +233,15 @@ footer a {
   nav {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   main h1 {
     font-size: 1.5rem;
   }
 
-  nav { gap: 0.5rem; }
-  nav a { font-size: 0.9rem; padding: 0.4rem; }
-}
-
-.search-container {
-  width: 300px;
-  height: 50px;
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
 }
