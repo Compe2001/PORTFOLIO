@@ -11,90 +11,88 @@
 <body>
 
 <header>
-  <button id="toggle-theme" class="theme-toggle">
-  <p1> MODO</p1>
-  🌙 / ☀️ </button>
+  <button id="toggle-theme" class="theme-toggle" aria-pressed="false" aria-label="Alternar modo claro y oscuro">
+    <span class="theme-label">MODO</span>
+    <span aria-hidden="true"> 🌙 / ☀️</span>
+  </button>
 
-
-  <div class="search-container"> 
-<div class="search-container"> 
-  <input type="text" id="searchInput" placeholder="Buscar..." /> 
-  <button onclick="handleSearch()">🔍</button> 
-</div>
-<div id="searchResults"></div>
-
+  <div class="search-container" role="search" aria-label="Buscar en el portafolio">
+   
+    <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar proyectos">
+    <button id="searchButton" type="button" onclick="handleSearch()" aria-label="Iniciar búsqueda">🔍</button>
+    <div id="searchResults" aria-live="polite"></div>
+  </div>
 </header>
- <nav>
-  <a href="//index.html">Home</a>
-  <a href="services.html">Servicios</a>
-  <a href="portfolio.html">Proyectos</a>
-  <a href="contact.html">Contacto</a>
-</nav>
-    
 
-<main class="category-page">
+<nav role="navigation" aria-label="Navegación principal">
+  <a href="/index.html">Home</a>
+  <a href="/services.html">Servicios</a>
+  <a href="/portfolio.html">Proyectos</a>
+  <a href="/contact.html">Contacto</a>
+</nav>
+
+<main class="category-page" id="main">
   <!-- Encabezado de la categoría -->
   <section class="category-header">
-    <h1> LOGOFOLIO </h1>
+    <h1>LOGOFOLIO</h1>
     <p>Explora mis diseños de logotipos, identidad visual y branding.</p>
   </section>
 
   <!-- Grid de proyectos -->
-  <section class="projects">
+  <section class="projects" aria-label="Proyectos">
     <div class="project-card">
-      <img src="/public/img/logo-sensi.jpg" alt="Logo Proyecto 1">
+      <img src="/public/img/logo-sensi.jpg" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400">
       <div class="project-content">
-        <h2> SENSI HOME</h2>
-        <p>SENSI HOME es una mueblería que cuenta con 1 showroom y una bodega en Guadalajara, Jalisco ofrece muebles de alta calidad y diseño contemporáneo mientras utiliza estrategias de venta modernas como redes sociales, marketing de contenidos y publicidad en línea además de que se realizao una E- comerce </p>
-        <a href="#" class="btn">Ver más</a>
+        <h2>SENSI HOME</h2>
+        <p>SENSI HOME es una mueblería que cuenta con 1 showroom y una bodega en Guadalajara, Jalisco. Ofrece muebles de alta calidad y diseño contemporáneo; se implementaron estrategias de venta modernas como redes sociales, marketing de contenidos y publicidad en línea, además de una tienda en línea.</p>
+        <a href="#" class="btn" aria-label="Ver más sobre Sensi Home">Ver más</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img src="/public/img/IIcono_1.jpg" alt="Logo Proyecto 2">
+      <img src="/public/img/IIcono_1.jpg" alt="Logotipo Rodmans Thrift Market" loading="lazy" width="400" height="400">
       <div class="project-content">
         <h2>Rodmans Thrift Market</h2>
-        <p>Descripción breve del logo y su concepto.</p>
-        <a href="#" class="btn">Ver más</a>
-      </div>
-    </div>
-
-     <div class="project-card">
-      <img src="//public/img/IGNIS-BALAM-COLOR.png" alt="Logo Proyecto 2">
-      <div class="project-content">
-        <h2>IGNIS BALAM</h2>
-        <p></p>
-        <a href="#" class="btn">Ver más</a>
+        <p>Identidad visual enfocada en sostenibilidad y estilo retro, pensada para un mercado de segunda mano.</p>
+        <a href="#" class="btn" aria-label="Ver más sobre Rodmans Thrift Market">Ver más</a>
       </div>
     </div>
 
     <div class="project-card">
-      <img src="public/img/logo2.jpg" alt="Logo Proyecto 2">
+      <img src="/public/img/IGNIS-BALAM-COLOR.png" alt="Logotipo IGNIS BALAM" loading="lazy" width="400" height="400">
+      <div class="project-content">
+        <h2>IGNIS BALAM</h2>
+        <p>Proyecto de identidad con inspiración en iconografía prehispánica y paleta vibrante.</p>
+        <a href="#" class="btn" aria-label="Ver más sobre IGNIS BALAM">Ver más</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="/public/img/logo2.jpg" alt="Logotipo Malthus" loading="lazy" width="800" height="600">
       <div class="project-content">
         <h2>Malthus</h2>
         <p>Descripción breve del logo y su concepto.</p>
-        <a href="#" class="btn">Ver más</a>
+        <a href="#" class="btn" aria-label="Ver más sobre Malthus">Ver más</a>
       </div>
     </div>
 
-     <div class="project-card">
-      <img src="public/img/logo2.jpg" alt="Logo Proyecto 2">
+    <div class="project-card">
+      <img src="/public/img/logo2.jpg" alt="Logotipo NewConcept Editions" loading="lazy" width="800" height="600">
       <div class="project-content">
         <h2>NEWCONCEPT EDITIONS</h2>
         <p>Descripción breve del logo y su concepto.</p>
-        <a href="#" class="btn">Ver más</a>
+        <a href="#" class="btn" aria-label="Ver más sobre NewConcept Editions">Ver más</a>
       </div>
     </div>
-
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="contact.html">Contacto</a></p>
+  <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="/contact.html">Contacto</a></p>
 </footer>
+
 <script src="/js/searchbar.js"></script>
 <script src="/js/main.js"></script>
-
 
 </body>
 </html>

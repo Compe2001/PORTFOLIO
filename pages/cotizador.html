@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cotizador de Tatuajes</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f4f4f4; }
+    .cotizador { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; }
+    label { display: block; margin-top: 10px; }
+    select, input { width: 100%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; padding: 10px; width: 100%; background: #222; color: #fff; border: none; border-radius: 5px; }
+    #resultado { margin-top: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="cotizador">
+    <h2>Cotizador de Tatuajes</h2>
+    
+    <label>Estilo:</label>
+    <select id="estilo">
+      <option value="1">Minimalista</option>
+      <option value="1.2">Tradicional</option>
+      <option value="1.5">Realismo</option>
+      <option value="1.3">Acuarela</option>
+    </select>
+
+    <label>Tamaño de mesa / material:</label>
+    <select id="material">
+      <option value="120">Chico</option>
+      <option value="200">Mediano</option>
+      <option value="350">Grande</option>
+    </select>
+
+    <label>Dificultad:</label>
+    <select id="dificultad">
+      <option value="1">Baja</option>
+      <option value="1.1">Media</option>
+      <option value="1.2">Alta</option>
+    </select>
+
+    <label>Horas de trabajo:</label>
+    <input type="number" id="horas" value="2" min="1">
+
+    <button onclick="calcular()">Calcular Precio</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      const tarifaHora = 600; // MXN por hora
+      const estilo = parseFloat(document.getElementById("estilo").value);
+      const material = parseFloat(document.getElementById("material").value);
+      const dificultad = parseFloat(document.getElementById("dificultad").value);
+      const horas = parseFloat(document.getElementById("horas").value);
+
+      const precio = (horas * tarifaHora) * estilo * dificultad + material;
+
+      document.getElementById("resultado").innerText = 
+        "Precio estimado: $" + precio.toFixed(2) + " MXN";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+/* Cotizador */
+.cotizador {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cotizador h2 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.cotizador label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.cotizador select,
+.cotizador input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--muted-text);
+  border-radius: 6px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: border 0.3s ease;
+}
+
+.cotizador select:focus,
+.cotizador input:focus {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.cotizador button {
+  margin-top: 1.5rem;
+  padding: 0.8rem;
+  width: 100%;
+  background: var(--accent-color);
+  color: #161616;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cotizador button:hover {
+  background: #005a9e;
+  transform: scale(1.05);
+}
+
+#resultado {
+  margin-top: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}

@@ -78,8 +78,8 @@ header {
   transform: scale(1.05);
 }
 
-.cvbtn { 
- background: #6ff3ff;
+.cvbtn {
+  background: #6ff3ff;
   color: #fff;
   align-self: center;
   padding: 0.5rem 1rem;
