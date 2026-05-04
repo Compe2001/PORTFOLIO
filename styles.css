@@ -79,7 +79,7 @@ header {
 }
 
 .cvbtn {
-  background: #6ff3ff;
+  background: #1c7d85;
   color: #fff;
   align-self: center;
   padding: 0.5rem 1rem;
@@ -163,6 +163,7 @@ main p {
 
 /* Galería */
 .gallery {
+  padding: 2rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
@@ -212,6 +213,16 @@ main p {
 .card-content h2 {
   margin-bottom: 1rem;
   color: var(--accent-color);
+}
+
+.cvbtn {
+  background: #aaaaaa;
+  color: #fff;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  font-weight: bold;
+
 }
 
 .card-image {

@@ -4,58 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página de categoría del portafolio de Casiel Nicolás Rodríguez Vázquez.">
-  <title>LOGOFOLIO | Casiel Nicolás Rodríguez Vázquez</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>DISEÑO WEB| Casiel Nicolás Rodríguez Vázquez</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/elements.css">
 </head>
 <body>
 
 <header>
-  <div class="search-container"> 
-    <input type="text" id="searchInput" placeholder="Buscar..." /> 
-    <button onclick="handleSearch()">🔍</button> 
-  </div>
+  <button id="toggle-theme" class="theme-toggle" aria-pressed="false" aria-label="Alternar modo claro y oscuro">
+    <span class="theme-label">MODO</span>
+    <span aria-hidden="true"> 🌙 / ☀️</span>
+  </button>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">Acerca de mí</a>
-    <a href="services.html">Servicios</a>
-    <a href="portfolio.html">Portafolio</a>
-    <a href="contact.html">Contacto</a>
-  </nav>
+  <div class="search-container" role="search" aria-label="Buscar en el portafolio">
+   
+    <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar proyectos">
+    <button id="searchButton" type="button" onclick="handleSearch()" aria-label="Iniciar búsqueda">🔍</button>
+    <div id="searchResults" aria-live="polite"></div>
+  </div>
 </header>
 
-<main class="category-page">
+<nav role="navigation" aria-label="Navegación principal">
+  <a href="/index.html">Home</a>
+  <a href="/services.html">Servicios</a>
+  <a href="/portfolio.html">Proyectos</a>
+  <a href="/contact.html">Contacto</a>
+</nav>
+
+<main class="category-page" id="main">
   <!-- Encabezado de la categoría -->
   <section class="category-header">
-    <h1>LOGOFOLIO</h1>
-    <p>Explora mis diseños de logotipos, identidad visual y branding.</p>
+    <h1>DISEÑO WEB</h1>
+    <p>He trabajado con fotomontajes para la empresa Newconcept y su submarca CASAEVO</p>
+     <p>Se ha trabajado con camara CANON R6</p>
   </section>
 
   <!-- Grid de proyectos -->
-  <section class="projects">
+  <section class="projects" aria-label="Proyectos">
     <div class="project-card">
-      <img src="public/img/logo1.jpg" alt="Logo Proyecto 1">
-      <div class="project-content">
-        <h2>Proyecto 1</h2>
-        <p>Descripción breve del logo y su concepto.</p>
-        <a href="#" class="btn">Ver más</a>
-      </div>
+      <img src="/public/img/fotodeproducto.jpg" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400"> <img src="/public/img/delya-ambientado.jpg" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400">
     </div>
 
-    <div class="project-card">
-      <img src="public/img/logo2.jpg" alt="Logo Proyecto 2">
-      <div class="project-content">
-        <h2>Proyecto 2</h2>
-        <p>Descripción breve del logo y su concepto.</p>
-        <a href="#" class="btn">Ver más</a>
-      </div>
-    </div>
+   
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="contact.html">Contacto</a></p>
+  <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="/contact.html">Contacto</a></p>
 </footer>
+
+<script src="/js/searchbar.js"></script>
+<script src="/js/main.js"></script>
 
 </body>
 </html>
