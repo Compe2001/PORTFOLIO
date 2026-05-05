@@ -21,19 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Aplicar preferencia guardada
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
-    btn.textContent = "Modo claro";
+    btn.textContent = "☀️";
   } else {
-    btn.textContent = "Modo oscuro";
+    btn.textContent = "🌙";
   }
 
   btn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     if (document.body.classList.contains("dark-mode")) {
       localStorage.setItem("theme", "dark");
-      btn.textContent = "Modo claro ☀️";
+      btn.textContent = "☀️";
     } else {
       localStorage.setItem("theme", "light");
-      btn.textContent = "Modo oscuro 🌙";
+      btn.textContent = "🌙";
     }
   });
 });
