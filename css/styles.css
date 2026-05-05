@@ -140,6 +140,53 @@ main p {
   color: var(--muted-text);
 }
 
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* imagen izquierda, texto derecha */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.hero-image {
+  flex: 0 0 auto; /* mantiene tamaño fijo */
+  align-self: center;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 400px;
+   align-self: center;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-description {
+  flex: 1; /* ocupa el resto del espacio */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--muted-text);
+}
+
+
+.gallery-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+.profile-image {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+
+  object-fit: cover;
+  margin-bottom: 0; /* ya no hace falta margin-bottom */
+}
+
+
+
+
 /* Carrusel */
 .carousel {
   position: relative;
@@ -167,6 +214,12 @@ main p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+}
+
+.hero-description {
+  max-width: 1000px;
+  text-align: left;
+  color: var(--muted-text);
 }
 
 .card {
@@ -265,4 +318,14 @@ footer a {
     font-size: 0.9rem;
     padding: 0.4rem;
   }
+
+ .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-description {
+    margin-top: 1rem;
+  }
+
 }
