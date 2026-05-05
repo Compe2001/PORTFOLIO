@@ -1,6 +1,6 @@
 let searchData = {};
 
-fetch("/data/searchdata.json")
+fetch("../data/searchdata.json")
   .then(response => response.json())
   .then(data => {
     searchData = data;
