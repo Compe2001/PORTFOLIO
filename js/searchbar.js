@@ -15,11 +15,11 @@ function handleSearch() {
   let found = false;
 
   for (const key in searchData) {
-    if (input.includes(key)) {
+    if (input.includes(key.toLowerCase())) {
       found = true;
       const target = searchData[key];
       if (target.startsWith("#")) {
-        document.querySelector(target).scrollIntoView({behavior: "smooth"});
+        document.querySelector(target).scrollIntoView({ behavior: "smooth" });
       } else {
         window.open(target, "_blank");
       }
@@ -28,7 +28,10 @@ function handleSearch() {
   }
 
   if (!found) {
-    const suggestions = Object.keys(searchData).filter(word => word.includes(input));
+    const suggestions = Object.keys(searchData).filter(word =>
+      word.toLowerCase().includes(input)
+    );
+
     if (suggestions.length > 0) {
       resultsContainer.innerHTML = "<p>¿Quizás quisiste decir?:</p>";
       suggestions.forEach(s => {
@@ -37,7 +40,7 @@ function handleSearch() {
         btn.onclick = () => {
           const target = searchData[s];
           if (target.startsWith("#")) {
-            document.querySelector(target).scrollIntoView({behavior: "smooth"});
+            document.querySelector(target).scrollIntoView({ behavior: "smooth" });
           } else {
             window.open(target, "_blank");
           }
