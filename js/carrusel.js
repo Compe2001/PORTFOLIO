@@ -1,24 +1,28 @@
-const videoTrack = document.querySelector(".video-carousel-track");
-const prevVideoBtn = document.querySelector(".video-carousel-btn.prev");
-const nextVideoBtn = document.querySelector(".video-carousel-btn.next");
+document.addEventListener("DOMContentLoaded", () => {
+  const carousels = document.querySelectorAll(".logo-carousel");
 
-let videoIndex = 0;
+  carousels.forEach(carousel => {
+    const images = carousel.querySelectorAll("img");
+    const prevBtn = carousel.querySelector(".carousel-btn.prev");
+    const nextBtn = carousel.querySelector(".carousel-btn.next");
+    let currentIndex = 0;
 
-function updateVideoCarousel() {
-  const cardWidth = document.querySelector(".video-card").offsetWidth + 20;
-  videoTrack.style.transform = `translateX(-${videoIndex * cardWidth}px)`;
-}
+    // Mostrar primera imagen
+    images[currentIndex].classList.add("active");
 
-nextVideoBtn.addEventListener("click", () => {
-  if (videoIndex < videoTrack.children.length - 1) {
-    videoIndex++;
-    updateVideoCarousel();
-  }
-});
+    function showImage(index) {
+      images.forEach(img => img.classList.remove("active"));
+      images[index].classList.add("active");
+    }
 
-prevVideoBtn.addEventListener("click", () => {
-  if (videoIndex > 0) {
-    videoIndex--;
-    updateVideoCarousel();
-  }
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+  });
 });

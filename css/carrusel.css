@@ -1,0 +1,44 @@
+.logo-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.logo-carousel img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.logo-carousel img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Botones */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(117, 117, 117, 0.4);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.10rem 0.20rem;
+  cursor: pointer;
+  border-radius: 80%;
+  z-index: 2;
+}
+
+.carousel-btn.prev { left: 5px; }
+.carousel-btn.next { right: 5px; }
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.6);
+}

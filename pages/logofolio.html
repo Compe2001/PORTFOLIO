@@ -6,7 +6,7 @@
   <meta name="description" content="Página de categoría del portafolio de Casiel Nicolás Rodríguez Vázquez.">
   <title>LOGOFOLIO | Casiel Nicolás Rodríguez Vázquez</title>
 <link rel="stylesheet" href="../css/styles.css">
-
+<link rel="stylesheet" href="../css/carrusel.css">
 </head>
 <body>
 
@@ -40,14 +40,24 @@
 
   <!-- Grid de proyectos -->
   <section class="projects" aria-label="Proyectos">
-    <div class="project-card">
-      <img src="../public/img/logo-sensi.jpg" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400">
-      <div class="project-content">
-        <h2>SENSI HOME</h2>
-        <p>SENSI HOME es una mueblería que cuenta con 1 showroom y una bodega en Guadalajara, Jalisco. Ofrece muebles de alta calidad y diseño contemporáneo; se implementaron estrategias de venta modernas como redes sociales, marketing de contenidos y publicidad en línea, además de una tienda en línea.</p>
-        <a href="#" class="btn" aria-label="Ver más sobre Sensi Home">Ver más</a>
-      </div>
-    </div>
+    
+<div class="project-card">
+  <div class="logo-carousel">
+    <img src="../public/img/logo-sensi.jpg" alt="Logo Sensi Home" class="active" loading="lazy">
+    <img src="../public/img/logo-sensi-boceto.jpg" alt="Boceto Sensi Home" loading="lazy">
+    <img src="../public/img/logo-sensi-mockup.jpg" alt="Mockup Sensi Home" loading="lazy">
+
+    <!-- Botones de navegación -->
+    <button class="carousel-btn prev" aria-label="Imagen anterior">⟨</button>
+    <button class="carousel-btn next" aria-label="Imagen siguiente">⟩</button>
+  </div>
+  <div class="project-content">
+    <h2>SENSI HOME</h2>
+    <p>SENSI HOME es una mueblería que cuenta con 1 showroom y una bodega en Guadalajara, Jalisco...</p>
+    <a href="#" class="btn" aria-label="Ver más sobre Sensi Home">Ver más</a>
+  </div>
+</div>
+
 
     <div class="project-card">
       <img src="../public/img/IIcono_1.jpg" alt="Logotipo Rodmans Thrift Market" loading="lazy" width="400" height="400">
@@ -71,7 +81,7 @@
       <img src="../public/img/MALTHUS-LOGO.png" alt="Logotipo Malthus" loading="lazy" width="600" height="600">
       <div class="project-content">
         <h2>Malthus</h2>
-        <p>Descripción breve del logo y su concepto.</p>
+        <p>Malthus es una cerveza artesanal de origen Jalisciense que surgió en 2022, con un enfoque en la calidad y el sabor auténtico.</p>
         <a href="#" class="btn" aria-label="Ver más sobre Malthus">Ver más</a>
       </div>
     </div>
@@ -80,7 +90,7 @@
       <img src="../public/img/LOGO EDITIONS.png" alt="Logotipo NewConcept Editions" loading="lazy" width="600" height="170">
       <div class="project-content">
         <h2>NEWCONCEPT EDITIONS</h2>
-        <p>Descripción breve del logo y su concepto.</p>
+        <p>Editions fue una línea de sillones por la empresa de fabricación e importación de muebles NewConcept.</p>
         <a href="#" class="btn" aria-label="Ver más sobre NewConcept Editions">Ver más</a>
       </div>
     </div>
@@ -103,6 +113,7 @@
 
 <script src="../js/searchbar.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/carrusel.js"></script>
 
 </body>
 </html>
