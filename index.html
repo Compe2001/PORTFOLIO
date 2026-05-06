@@ -1,132 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Casiel Nicolás Rodríguez Vázquez, diseñador gráfico y web.">
-  <title>CREATIVE DEVELOPER</title>
+  <title>Creative Developer</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-
 <header>
   <button id="toggle-theme" class="theme-toggle">
-  <p1> /p1>
+    <span>Modo 🌙 / ☀️</span>
   </button>
 
-
   <div class="search-container"> 
-<div class="search-container"> 
-  <input type="text" id="searchInput" placeholder="Buscar..." /> 
-  <button onclick="handleSearch()">🔍</button> 
-</div>
-<div id="searchResults"></div>
-
+    <input type="text" id="searchInput" placeholder="Buscar..." /> 
+    <button onclick="handleSearch()">🔍</button> 
+  </div>
+  <div id="searchResults"></div>
 </header>
- <nav>
-  <a href="//index.html">Home</a>
+
+<nav>
+  <a href="index.html">Inicio</a>
   <a href="services.html">Servicios</a>
   <a href="portfolio.html">Proyectos</a>
   <a href="contact.html">Contacto</a>
 </nav>
     
-
 <main>
+  <h1 class="welcome">Bienvenido a mi portafolio</h1>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img class="profile-image" src="public/img/yo-merengues.png" alt="Foto de perfil de Casiel Nicolás Rodríguez Vázquez">
+    </div>
+    <div class="hero-description">
+      <h2>Descargar CV</h2>
+      <button class="cvbtn">
+        <a href="public/CV_Casiel_Nicolas_Rodriguez_Vazquez.pdf" class="logo-home" download>Descargar CV</a>
+      </button>
+      <p>
+        Hola, soy Casiel Nicolás Rodríguez Vázquez. Diseñador gráfico y desarrollador web especializado en frontend. 
+        Me dedico a crear soluciones gráficas, audiovisuales y digitales para proyectos, startups y empresas.
+      </p>
+    </div>
+  </section>
 
- 
-
-   <h1 class="Welcome">Welcome to My Portfolio </h1>
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-image">
-    <img class="profile-image" src="public/img/yo-merengues.png" alt="Foto de perfil de Casiel Nicolás Rodríguez Vázquez">
-  </div>
-  <div class="hero-description">
-     <h2>Descargar CV
-    </h2>
-<button class= "cvbtn">
-    <a href="public/CV_Casiel_Nicolas_Rodriguez_Vazquez.pdf" class="logo-home" download>Descargar CV</a>
-   </button>
-    <p>
-      Bienvenido a mi Portafolio, soy Casiel Nicolás Rodríguez Vázquez. Graphic designer y webdev especializado en frontend.
-      Me dedico a brindar soluciones gráficas, audiovisuales y digitales para proyectos, emprendimientos y empresas.
-    </p>
-  </div>
-</section>
-
+  <!-- Galería -->
   <section class="about-me">
-   
+    <h2 class="gallery-title">Galería</h2>
+    <section class="gallery">
 
-
- <h2 class="gallery-title">GALERIA</h2>
-<section class="gallery">
-
-  
-    
-    <div class="card">
-      <a href="pages/logofolio.html">
-        <img src="public/img/IIcono_1.jpg" alt="Imagen sección 1">
-      </a>
-      <div class="card-content">
-        <h2>LOGOFOLIO</h2>
-        <p>Imagotipos, logotipos, isotipos e identidades visuales para empresas y emprendimientos.</p>
+      <div class="card">
+        <a href="pages/logofolio.html">
+          <img src="public/img/IIcono_1.jpg" alt="Imagen sección logofolio">
+        </a>
+        <div class="card-content">
+          <h2>Logofolio</h2>
+          <p>Selección de logotipos, imagotipos e identidad visual diseñados para negocios y emprendimientos.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <a href="pages/fotografia.html">
-        
-
-       <img src="public/img/delya-ambientado.jpg" alt="Imagen sección 2">
-   
-      </a>
-      <div class="card-content">
-        <h2>FOTOGRAFÍA</h2>
-        <p>Landing pages y sitios web responsivos.</p>
+      <div class="card">
+        <a href="pages/fotografia.html">
+          <img src="public/img/delya-ambientado.jpg" alt="Imagen sección fotografía">
+        </a>
+        <div class="card-content">
+          <h2>Fotografía</h2>
+          <p>Fotografía artística, de producto y de eventos, con enfoque en composición y estilo visual.</p>
+        </div>
       </div>
-    </div>
 
-   
-    
-    <div class="card">
-      <a href="pages/diseñoweb.html">
-        <img src="public/img/codeee.png" alt="Imagen sección 3">
-      </a>
-      <div class="card-content">
-        <h2>DISEÑO WEB</h2>
-        <p>Landing pages y sitios web responsivos.</p>
+      <div class="card">
+        <a href="pages/diseñoweb.html">
+          <img src="public/img/codeee.png" alt="Imagen sección diseño web">
+        </a>
+        <div class="card-content">
+          <h2>Diseño web</h2>
+          <p>Creación de landing pages y sitios web responsivos con enfoque en experiencia de usuario.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <a href="pages/fotografia.html">
-        <img src="public/img/Captura de pantalla 2026-01-22 a la(s) 4.44.07 p.m..png" alt="Imagen sección 2">
-      </a>
-      <div class="card-content">
-        <h2>PRODUCCIÓN GRÁFICA</h2>
-        <p>Descripción breve de la sección 2, con un texto introductorio.</p>
+      <div class="card">
+        <a href="pages/fotografia.html">
+          <img src="public/img/Captura de pantalla 2026-01-22 a la(s) 4.44.07 p.m..png" alt="Imagen sección producción gráfica">
+        </a>
+        <div class="card-content">
+          <h2>Producción gráfica</h2>
+          <p>Diseño de materiales impresos y digitales para identidad visual y campañas de marketing.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img class="card-images" src="public/img/motion.gif" alt="Imagen sección 3">
-      <div class="card-content">
-        <h2>MOTION GRAPHICS</h2>
-        <p>Descripción breve de la sección 3, con un texto introductorio.</p>
+      <div class="card">
+        <a href="pages/audiovisual.html">
+          <img class="card-images" src="public/img/motion.gif" alt="Imagen sección audiovisual">
+        </a>
+        <div class="card-content">
+          <h2>Audiovisual</h2>
+          <p>Edición de video, audio y animaciones motion graphics para proyectos creativos.</p>
+        </div>
       </div>
-    </div>
 
-
-  
+    </section>
   </section>
 </main>
 
 <footer>
   <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="contact.html">Contacto</a></p>
 </footer>
+
 <script src="js/main.js"></script>
 <script src="js/searchbar.js"></script>
 

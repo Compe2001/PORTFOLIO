@@ -5,7 +5,7 @@ fetch("../data/searchdata.json")
   .then(data => {
     searchData = data;
   })
-  .catch(error => console.error("Error cargando JSON:", error));
+  .catch(error => console.error("No se cargó el JSON:", error));
 
 function handleSearch() {
   const input = document.getElementById("searchInput").value.toLowerCase();

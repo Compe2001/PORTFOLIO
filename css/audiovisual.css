@@ -1,0 +1,46 @@
+/* Galería audiovisual */
+.audiovisual-gallery {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.audiovisual-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audiovisual-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+.audiovisual-card video {
+  width: 100%;
+  height: auto;
+  border-bottom: 3px solid var(--accent-color);
+  border-radius: 12px 12px 0 0;
+  outline: none;
+  background: #000;
+}
+
+.audiovisual-content {
+  padding: 1rem;
+  text-align: left;
+}
+
+.audiovisual-content h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+.audiovisual-content p {
+  color: var(--muted-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

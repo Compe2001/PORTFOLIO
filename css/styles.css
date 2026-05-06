@@ -225,7 +225,7 @@ main p {
 .card {
   background: var(--card-bg);
   border-radius: 8px;
-  max-height: 500px;
+  max-height: 550px;
   max-width: 400px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -243,7 +243,7 @@ main p {
 }
 
 .card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.0);
 }
 
 .theme-toggle {
@@ -259,14 +259,17 @@ main p {
 }
 
 .card-content {
-  padding: 1rem;
+  padding: 0.7rem;
   min-height: 200px;
 }
 
 .card-content h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
   color: var(--accent-color);
 }
+
+
+
 
 .cvbtn {
   background: #aaaaaa;
@@ -288,6 +291,9 @@ main p {
 .card-content p {
   color: var(--muted-text);
 }
+
+
+
 
 /* Footer */
 footer {
