@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Página de categoría del portafolio de Casiel Nicolás Rodríguez Vázquez.">
-  <title>DISEÑO WEB| Casiel Nicolás Rodríguez Vázquez</title>
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/elements.css">
+  <title>DISEÑO WEB | Casiel Nicolás Rodríguez Vázquez</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/elements.css">
+  <link rel="stylesheet" href="../css/web.css">
 </head>
 <body>
 
@@ -17,7 +18,6 @@
   </button>
 
   <div class="search-container" role="search" aria-label="Buscar en el portafolio">
-   
     <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar proyectos">
     <button id="searchButton" type="button" onclick="handleSearch()" aria-label="Iniciar búsqueda">🔍</button>
     <div id="searchResults" aria-live="polite"></div>
@@ -35,17 +35,31 @@
   <!-- Encabezado de la categoría -->
   <section class="category-header">
     <h1>DISEÑO WEB</h1>
-    <p>He trabajado con fotomontajes para la empresa Newconcept y su submarca CASAEVO</p>
-     <p>Se ha trabajado con camara CANON R6</p>
+    <p>Experiencias digitales con arquitectura sólida y enfoque en UX/UI.</p>
+    <p>Proyectos desarrollados con Node.js, React y optimización para e-commerce.</p>
   </section>
 
   <!-- Grid de proyectos -->
   <section class="projects" aria-label="Proyectos">
     <div class="project-card">
-      <img src="/public/img/fotodeproducto.jpg" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400"> <img src="/public/img/delya-ambientado.jpg" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400">
+      <img src="/public/img/fotodeproducto.jpg" alt="Proyecto Sensi Home" loading="lazy" width="400" height="400">
+      <div class="project-info">
+        <h2>Sensi Home</h2>
+        <p>Landing page con integración de e-commerce y branding corporativo.</p>
+        <span class="stack">Stack: HTML, CSS, JS</span>
+        <a href="https://demo-sensi-home.com" target="_blank" class="demo-btn">Ver demo</a>
+      </div>
     </div>
 
-   
+    <div class="project-card">
+      <img src="/public/img/delya-ambientado.jpg" alt="Proyecto Delya" loading="lazy" width="400" height="400">
+      <div class="project-info">
+        <h2>Delya</h2>
+        <p>Web modular con enfoque responsivo y optimización de UX.</p>
+        <span class="stack">Stack: React, Node.js</span>
+        <a href="https://demo-delya.com" target="_blank" class="demo-btn">Ver demo</a>
+      </div>
+    </div>
   </section>
 </main>
 
