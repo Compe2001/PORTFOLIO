@@ -1,9 +1,47 @@
 {
   "proyectos": "#proyectos",
+  "portfolio": "#proyectos",
+  "trabajos": "#proyectos",
   "contacto": "#contacto",
+  "contáctame": "#contacto",
+  "email": "#contacto",
   "sobre mi": "#sobre-mi",
+  "acerca de": "#sobre-mi",
+  "perfil": "#sobre-mi",
   "cv": "cv.pdf",
-  "logos": "/pages/logofolio.html",
- "logo": "/pages/logofolio.html"
+  "currículum": "cv.pdf",
+  "resume": "cv.pdf",
 
+  "logos": "/pages/logofolio.html",
+  "logo": "/pages/logofolio.html",
+  "logofolio": "/pages/logofolio.html",
+  "branding": "/pages/logofolio.html",
+  "identidad": "/pages/logofolio.html",
+
+  "audiovisual": "/pages/audiovisual.html",
+  "videos": "/pages/audiovisual.html",
+  "reels": "/pages/audiovisual.html",
+  "motion": "/pages/audiovisual.html",
+  "animaciones": "/pages/audiovisual.html",
+
+  "diseño web": "/pages/diseñoweb.html",
+  "web": "/pages/diseñoweb.html",
+  "sitios": "/pages/diseñoweb.html",
+  "ux": "/pages/diseñoweb.html",
+  "ui": "/pages/diseñoweb.html",
+  "frontend": "/pages/diseñoweb.html",
+  "desarrollo": "/pages/diseñoweb.html",
+
+  "producción gráfica": "/pages/produccióngrafica.html",
+  "gráfica": "/pages/produccióngrafica.html",
+  "impresos": "/pages/produccióngrafica.html",
+  "editorial": "/pages/produccióngrafica.html",
+  "carteles": "/pages/produccióngrafica.html",
+
+  "fotografía": "/pages/fotografía.html",
+  "fotos": "/pages/fotografía.html",
+  "photo": "/pages/fotografía.html",
+  "producto": "/pages/fotografía.html",
+  "shooting": "/pages/fotografía.html",
+  "canon": "/pages/fotografía.html"
 }
