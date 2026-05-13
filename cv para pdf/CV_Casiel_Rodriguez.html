@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Casiel Nicolás Rodríguez Vázquez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════
+       VARIABLES — edita aquí los colores
+    ═══════════════════════════════════════ */
+   :root {
+  --bg:           #eaf6fb;       /* fondo general (azul muy claro) */
+  --sidebar-bg:   #0b2540;       /* fondo sidebar (azul noche) */
+  --accent:       #2b7fa6;       /* azul petróleo */
+  --accent-light: #7fc0e0;       /* acento claro azul */
+  --cream:        #f0fbff;       /* crema fría / blanco azulado */
+  --dark:         #072033;       /* texto oscuro (azul profundo) */
+  --mid:          #3b6b86;       /* texto medio (azul grisáceo) */
+  --soft:         #8aa9bb;       /* texto suave (gris azulado) */
+  --white:        #f7fbff;       /* blanco frío */
+  --line:         #cfe6f3;       /* líneas divisoras */
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* RESET & BASE */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* PAGE (A4 aprox) */
+.page {
+  width: 794px;
+  min-height: 1123px;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  box-shadow: 0 20px 60px rgba(6,30,45,0.25);
+  overflow: hidden;
+}
+
+/* HEADER — ocupa todo el ancho */
+.header {
+  grid-column: 1 / -1;
+  background: var(--sidebar-bg);
+  padding: 32px 36px 28px 36px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.12;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; right: 80px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  opacity: 0.08;
+}
+
+/* Foto */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--accent-light);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--white);
+  letter-spacing: 1px;
+  font-family: var(--font-body);
+  /* Para usar foto: background: url('foto.jpg') center/cover; */
+}
+
+.header-text {
+  z-index: 1;
+}
+
+.header-text h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.header-text .role {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--accent-light);
+  margin-top: 6px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header-text .age {
+  font-size: 11px;
+  color: var(--soft);
+  margin-top: 4px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: var(--sidebar-bg);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.sidebar-section h3 {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-light);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(43,127,166,0.18);
+}
+
+.sidebar-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-section ul li {
+  font-size: 12px;
+  color: #bcdbe8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.3;
+}
+
+.sidebar-section ul li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Skill bar */
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.skill-label {
+  font-size: 11.5px;
+  color: #bcdbe8;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-img-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+/* Imagen circular, recorte limpio y borde coherente con la paleta */
+.profile-img {
+  width: 20%;
+  height: 100%;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  background-color: var(--accent);
+  border: 3px solid var(--accent-light);
+  box-shadow: 0 6px 18px rgba(6,30,45,0.12);
+}
+
+/* Anillo sutil alrededor para destacar sobre fondos oscuros o claros */
+.profile-img-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(43,127,166,0.18), rgba(127,192,224,0.10));
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Variante para header oscuro: borde sólido blanco frío para contraste */
+.profile-img--solid {
+  border: 4px solid var(--white);
+  box-shadow: 0 8px 22px rgba(6,30,45,0.18);
+}
+
+/* Placeholder con iniciales cuando no hay imagen */
+.avatar-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent));
+  color: var(--white);
+  border: 3px solid rgba(255,255,255,0.06);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.6px;
+}
+
+
+.skill-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  border-radius: 2px;
+}
+
+/* Idioma badge */
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang-name { font-size: 12px; color: #bcdbe8; }
+
+.lang-badge {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--sidebar-bg);
+  background: var(--accent-light);
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+/* MAIN CONTENT */
+.main {
+  padding: 30px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Sección */
+.section h2 {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Perfil */
+.perfil p {
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--mid);
+}
+
+/* Entrada de experiencia / educación */
+.entry {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.entry:last-child { border-bottom: none; margin-bottom: 0; }
+
+.entry-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dark);
+  grid-column: 1;
+}
+
+.entry-sub {
+  font-size: 11px;
+  color: var(--soft);
+  grid-column: 1;
+  font-style: italic;
+}
+
+.entry-date {
+  font-size: 10.5px;
+  color: var(--accent);
+  font-weight: 500;
+  grid-column: 2;
+  grid-row: 1;
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 2px;
+}
+
+.entry-desc {
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: var(--mid);
+  margin-top: 5px;
+  grid-column: 1 / -1;
+}
+
+/* Proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.project-card {
+  background: var(--cream);
+  border-left: 3px solid var(--accent);
+  padding: 12px 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.project-card h4 {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.project-card p {
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+  grid-column: 1 / -1;
+  background: var(--accent);
+  padding: 9px 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer span {
+  font-size: 10px;
+  color: var(--white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+/* PRINT */
+@media print {
+  body { background: none; padding: 0; }
+  .page {
+    width: 100%;
+    box-shadow: none;
+    min-height: 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ── HEADER ─────────────────────────── -->
+  <header class="header">
+    <img src="public/img/yo-merengues.png" alt="Foto de Casiel Rodríguez" class ="profile-img">
+    <div class="header-text">
+      <h1>Casiel Nicolás<br>Rodríguez Vázquez</h1>
+      <p class="role">Diseñador Web &amp; AudioVisual</p>
+      <p class="age">25 años · Guadalajara, México</p>
+    </div>
+  </header>
+
+  <!-- ── SIDEBAR ────────────────────────── -->
+  <aside class="sidebar">
+
+    <!-- Contacto / Redes -->
+    <div class="sidebar-section">
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/casiel-rodriguez/" target="_blank" style="color: var(--accent-light); text-decoration: none;">3331408373</a></li>
+        <li><a href="https://www.instagram.com/casielrodriguez/" target="_blank" style="color: var(--accent-light); text-decoration: none;"> casielrodriguez14@gmail.com</a></li>
+
+      </ul>
+    </div>
+
+    <!-- Idiomas -->
+    <div class="sidebar-section">
+      <h3>Idiomas</h3>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="lang-item">
+          <span class="lang-name">Español</span>
+          <span class="lang-badge">Nativo</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Inglés</span>
+          <span class="lang-badge">B2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Software con barras -->
+    <div class="sidebar-section">
+      <h3>Software</h3>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+
+        <div class="skill-item">
+          <span class="skill-label">After Effects</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Premiere Pro</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">DaVinci Resolve</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">CapCut</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Photoshop</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Adobe Ilustrator</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">Diseño Web / VSCode</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+        </div>
+    
+
+      </div>
+    </div>
+
+
+    <!-- Habilidades -->
+    <div class="sidebar-section">
+      <h3>Habilidades</h3>
+      <ul>
+        <li>Identidad de Marca</li>
+        <li>Edición Audiovisual</li>
+        <li>Motion Graphics</li>
+        <li>Diseño Web</li>
+      </ul>
+    </div>
+     <div class="sidebar-section">
+      <h3>Dev Skills</h3>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+
+        <div class="skill-item">
+          <span class="skill-label">HTML</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">CSS</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">JAVASCRIPT</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">NODE.JS</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">GIT</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">REACT</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div>
+        </div>
+        <div class="skill-item">
+          <span class="skill-label">DOCKER</span>
+          <div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div>
+        </div>
+      
+
+      </div>
+    </div>
+
+      <div class="sidebar-section">
+      <h3>MANEJO DE IA</h3>
+      <ul>
+        <li>ChatGPT</li>
+        <li>Claude</li>
+        <li>Copilot</li>
+        <li>Deepseek</li>
+        <li>FireFly Adobe</li>
+      </ul>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN ───────────────────────────── -->
+  <main class="main">
+
+    <!-- Perfil -->
+    <div class="section perfil">
+      <h2>Perfil</h2>
+      <p>
+        Diseñador gráfico y visual con experiencia en identidad de marca, edición
+        audiovisual, ilustración digital y diseño web. Manejo de la Suite Adobe completa,
+        herramientas de edición de video profesional (Premiere, After Effects, DaVinci Resolve,
+        CapCut).
+      </p>
+    </div>
+
+    <!-- Experiencia -->
+    <div class="section">
+      <h2>Experiencia</h2>
+
+      <div class="entry">
+        <span class="entry-title">Auxiliar de Mercadotecnia</span>
+        <span class="entry-date">2022</span>
+        <span class="entry-sub">NewConcept MX</span>
+        <p class="entry-desc">Apoyo en campañas de marketing, diseño de piezas digitales y materiales gráficos para comunicación de marca, así como edición de videos con Premiere y Capcut pro</p>
+      </div>
+
+      <div class="entry">
+        <span class="entry-title">Diseñador Freelance</span>
+        <span class="entry-date">Freelance 2023</span>
+        <span class="entry-sub">Geoconstructora Berma</span>
+        <p class="entry-desc">Desarrollo de materiales gráficos y visuales para proyectos de la constructora.</p>
+      </div>
+
+      <div class="entry">
+        <span class="entry-title">Ilustrador Freelance</span>
+        <span class="entry-date">Freelance 2024</span>
+        <span class="entry-sub">NeoNatural</span>
+        <p class="entry-desc">Creación de ilustraciones para logotipos de cerveza artesanal, bebidas enlatadas y piezas gráficas especializadas.</p>
+      </div>
+
+      <div class="entry">
+        <span class="entry-title">Editor de video y Motion graphics</span>
+        <span class="entry-date">2025-2026</span>
+        <span class="entry-sub">Sensi Home</span>
+        <p class="entry-desc">Creación de contenido, reels, videos técnicos y historias para redes sociales con After effecs, Premiere y Capcut Pro</p>
+      </div>
+    </div>
+
+    <!-- Educación -->
+    <div class="section">
+      <h2>Educación</h2>
+
+      <div class="entry">
+        <span class="entry-title">Lic. en Diseño</span>
+        <span class="entry-date">2020 — 2026</span>
+        <span class="entry-sub">CUAAD · Centro Universitario de Arte, Arquitectura y Diseño</span>
+      </div>
+
+      <div class="entry">
+        <span class="entry-title">Formación Audiovisual</span>
+        <span class="entry-date">2018</span>
+        <span class="entry-sub">CAAV · Centro de Artes Audiovisuales</span>
+      </div>
+    </div>
+
+    <!-- Proyectos -->
+    <div class="section">
+      <h2>Proyectos Destacados</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h4>Logotipo — Cerveza Artesanal</h4>
+          <p>Identidad visual completa para marca de cerveza artesanal. NeoNatural.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Ilustración — Bebida Enlatada</h4>
+          <p>Arte final e ilustración para lata de bebida. NeoNatural.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Piezas Gráficas — Paranoia Tattoo</h4>
+          <p>Colaterales y materiales de identidad para estudio de tatuajes.</p>
+        </div>
+
+        <div class="project-card">
+          <h4>Materiales — Geoconstructora Berma</h4>
+          <p>Diseño de materiales gráficos para proyectos de construcción.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────── -->
+  <footer class="footer">
+    <span>Casiel Nicolás Rodríguez Vázquez &nbsp;·&nbsp; Diseñador Gráfico &amp; Visual &nbsp;·&nbsp; 2025</span>
+  </footer>
+
+</div>
+
+</body>
+</html>
