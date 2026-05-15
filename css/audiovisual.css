@@ -1,16 +1,25 @@
 /* Estilo común para video e iframe */
 .audiovisual-card video,
 .audiovisual-card iframe {
-  width: 100%;
+  width: 70%;
+  align-self: center;
   height: auto;
   border-bottom: 3px solid var(--accent-color);
   border-radius: 12px 12px 0 0;
   outline: none;
   background: #000;
-  display: block;
 }
 
 /* Ajuste responsivo para iframes de YouTube */
 .audiovisual-card iframe {
   aspect-ratio: 16 / 9; /* Mantiene proporción correcta */
+}
+
+@media screen and (max-width: 768px) {
+  .audiovisual-card video,
+  .audiovisual-card iframe {
+    width: 100%;
+    height: auto;
+  }
+  
 }
