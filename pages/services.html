@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios profesionales de diseño gráfico y desarrollo web - Casiel Nicolás Rodríguez Vázquez">
+  <title>Servicios - Creative Developer</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* Estilos adicionales para servicios */
+    .services-hero {
+      background: linear-gradient(135deg, var(--accent-color) 0%, rgba(0, 120, 215, 0.1) 100%);
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .services-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .services-hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted-text);
+    }
+
+    /* Grid de servicios */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-left: 4px solid var(--accent-color);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0, 120, 215, 0.2);
+    }
+
+    .service-card:hover::before {
+      left: 100%;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: var(--muted-text);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features li {
+      color: var(--muted-text);
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .service-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .service-cta {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid var(--accent-color);
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .service-cta:hover {
+      background: transparent;
+      color: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    /* Sección de proceso */
+    .process-section {
+      background: var(--card-bg);
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .process-section h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 50%;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 12px rgba(0, 120, 215, 0.3);
+    }
+
+    .process-step h3 {
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .process-step p {
+      color: var(--muted-text);
+      font-size: 0.95rem;
+    }
+
+    /* Sección de preguntas frecuentes */
+    .faq-section {
+      margin-bottom: 3rem;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      background: var(--card-bg);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
+      color: var(--text-color);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--nav-bg);
+      color: var(--accent-color);
+    }
+
+    .faq-icon {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+      color: var(--accent-color);
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      color: var(--muted-text);
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      max-height: 500px;
+    }
+
+    /* Call to action final */
+    .cta-section {
+      background: linear-gradient(135deg, var(--accent-color) 0%, rgba(0, 120, 215, 0.8) 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .cta-button {
+      background: white;
+      color: var(--accent-color);
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s ease;
+      border: 2px solid white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .services-hero {
+        padding: 2rem 1rem;
+      }
+
+      .services-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .services-grid {
+        gap: 1.5rem;
+      }
+
+      .process-timeline {
+        gap: 1.5rem;
+      }
+
+      .faq-question {
+        padding: 1rem;
+        font-size: 0.95rem;
+      }
+
+      .cta-section {
+        padding: 2rem 1rem;
+      }
+
+      .cta-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader"></div>
+    <p>Cargando...</p>
+  </div>
+
+  <div id="content" style="display:none;"></div>
+
+  <header>
+    <button id="toggle-theme" class="theme-toggle">
+      <span>Modo 🌙 / ☀️</span>
+    </button>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Buscar..." />
+      <button onclick="handleSearch()">🔍</button>
+    </div>
+    <div id="searchResults"></div>
+  </header>
+
+ <nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../pages/services.html">Servicios</a>
+  <a href="../pages/proyectos.html">Proyectos</a>
+  <a href="../pages/contact.html">Contacto</a>
+</nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <h1>Servicios Profesionales</h1>
+      <p>Soluciones creativas integrales en diseño gráfico, desarrollo web y producción audiovisual. Transformamos ideas en experiencias visuales impactantes.</p>
+    </section>
+
+    <!-- Servicios principales -->
+    <section class="services-grid">
+      <!-- Diseño Gráfico -->
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Diseño Gráfico</h3>
+        <p>Creación de identidades visuales sólidas y materiales de marketing que comunican tu marca de manera efectiva.</p>
+        <ul class="service-features">
+          <li>Logotipos e imagotipos</li>
+          <li>Identidad corporativa</li>
+          <li>Diseño de packaging</li>
+          <li>Materiales de marketing</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Desarrollo Web -->
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Desarrollo Web</h3>
+        <p>Sitios web y landing pages responsivos, optimizados para conversión y experiencia de usuario excepcional.</p>
+        <ul class="service-features">
+          <li>Landing pages</li>
+          <li>Sitios web responsivos</li>
+          <li>E-commerce</li>
+          <li>Optimización SEO</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Fotografía -->
+      <div class="service-card">
+        <div class="service-icon">📸</div>
+        <h3>Fotografía Profesional</h3>
+        <p>Fotografía artística, comercial y de eventos con enfoque en composición, iluminación y storytelling visual.</p>
+        <ul class="service-features">
+          <li>Fotografía de producto</li>
+          <li>Sesiones corporativas</li>
+          <li>Cobertura de eventos</li>
+          <li>Retoque y edición</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Audiovisual -->
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3>Producción Audiovisual</h3>
+        <p>Edición de video, animaciones motion graphics y contenido audiovisual para redes sociales y marketing.</p>
+        <ul class="service-features">
+          <li>Edición de video</li>
+          <li>Motion graphics</li>
+          <li>Animaciones 2D/3D</li>
+          <li>Producción de contenido</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Branding -->
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Branding Integral</h3>
+        <p>Estrategia completa de marca que abarca desde identidad visual hasta posicionamiento en el mercado.</p>
+        <ul class="service-features">
+          <li>Estrategia de marca</li>
+          <li>Guía de estilo</li>
+          <li>Posicionamiento visual</li>
+          <li>Consultoría creativa</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Consultoría Creativa -->
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h3>Consultoría Creativa</h3>
+        <p>Asesoramiento estratégico en comunicación visual, dirección de arte y optimización de proyectos creativos.</p>
+        <ul class="service-features">
+          <li>Dirección de arte</li>
+          <li>Auditoría visual</li>
+          <li>Estrategia de contenido</li>
+          <li>Capacitación creativa</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+    </section>
+
+    <!-- Proceso de trabajo -->
+    <section class="process-section">
+      <h2>Nuestro Proceso</h2>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Descubrimiento</h3>
+          <p>Entendemos tu visión, objetivos y público objetivo a través de consultas detalladas.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Estrategia</h3>
+          <p>Desarrollamos una estrategia creativa basada en investigación y análisis de mercado.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Diseño</h3>
+          <p>Creamos propuestas visuales innovadoras y alineadas con tus necesidades.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Refinamiento</h3>
+          <p>Iteramos y ajustamos los detalles hasta alcanzar la perfección visual.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h3>Entrega</h3>
+          <p>Proporcionamos archivos de alta calidad y soporte post-proyecto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Cuál es el tiempo de entrega para un proyecto?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          El tiempo varía según la complejidad del proyecto. Típicamente: diseño gráfico simple (1-2 semanas), sitios web (3-6 semanas), branding integral (4-8 semanas). Ofrecemos cronogramas personalizados según tus necesidades.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Qué incluye el precio de un proyecto?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Todos nuestros precios incluyen: consulta inicial, propuestas de diseño, hasta 3 rondas de revisiones, archivos finales en múltiples formatos, y soporte por 30 días post-entrega. Servicios adicionales tienen un costo extra.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Trabajan con startups y pequeños negocios?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Absolutamente. Trabajamos con empresas de todos los tamaños, desde emprendedores hasta grandes corporaciones. Ofrecemos soluciones escalables adaptadas a cualquier presupuesto.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Cuál es el proceso de revisión de proyectos?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Después de la propuesta inicial, tienes derecho a 3 rondas de revisiones. Cambios adicionales se cobran por hora. Realizamos seguimiento regular mediante reuniones virtuales y correo electrónico.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Ofrecen servicios de mantenimiento después del proyecto?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Sí, ofrecemos planes de mantenimiento y soporte continuo para sitios web, actualizaciones de contenido, y asesoramiento creativo. Contáctanos para conocer nuestros paquetes de mantenimiento.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Retienen derechos sobre el trabajo creativo?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          No, todos los derechos del trabajo creativo se transfieren a ti una vez completado el pago. Tienes libertad total para usar y modificar el contenido según lo necesites.
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="cta-section" id="contact">
+      <h2>¿Listo para tu próximo proyecto?</h2>
+      <p>Contáctame hoy para discutir tu idea y encontrar la solución creativa perfecta para tu marca.</p>
+      <a href="./contact.html" class="cta-button">Contactar Ahora</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="contact.html">Contacto</a></p>
+  </footer>
+
+  <script src="../js/preloader.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/searchbar.js"></script>
+
+  <script>
+    // Toggle para FAQ
+    function toggleFAQ(button) {
+      const faqItem = button.parentElement;
+      faqItem.classList.toggle('active');
+    }
+
+    // Cerrar otros FAQ cuando abro uno
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== this.parentElement) {
+            item.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
