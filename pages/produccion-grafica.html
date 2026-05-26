@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Producción Gráfica - Casiel Nicolás Rodríguez Vázquez. Fotomontajes, diseño editorial y producción gráfica profesional.">
+  <title>Producción Gráfica | Casiel Nicolás Rodríguez Vázquez</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/pg.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button id="toggle-theme" class="theme-toggle" aria-pressed="false" aria-label="Alternar modo claro y oscuro">
+      <span class="theme-label">MODO</span>
+      <span aria-hidden="true">🌙 / ☀️</span>
+    </button>
+
+    <div class="search-container" role="search" aria-label="Buscar en la galería">
+      <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar proyectos">
+      <button id="searchButton" type="button" onclick="handleSearch()" aria-label="Iniciar búsqueda">🔍</button>
+      <div id="searchResults" aria-live="polite" aria-label="Resultados de búsqueda"></div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Navegación principal">
+    <a href="../index.html" title="Ir a inicio">Inicio</a>
+    <a href="../services.html" title="Ver servicios">Servicios</a>
+    <a href="../portfolio.html" title="Ver todos los proyectos">Proyectos</a>
+    <a href="../contact.html" title="Contactar">Contacto</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pg-main" id="main" role="main">
+
+    <!-- Category Header -->
+    <section class="pg-hero">
+      <div class="pg-hero-content">
+        <h1>Producción Gráfica</h1>
+        <p class="pg-subtitle">Fotomontajes, diseño editorial y producción visual para marcas y proyectos creativos</p>
+        <p class="pg-description">He trabajado con fotomontajes profesionales para empresas como Newconcept y su submarca CasaEvo. Especializado en fotografía de producto con equipamiento profesional: cámara Canon R6 y edición de posproducción avanzada.</p>
+      </div>
+      <div class="pg-hero-accent"></div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="pg-projects" aria-label="Galería de proyectos de producción gráfica">
+
+      <!-- Project Card 1: Necrosis -->
+      <article class="pg-project-card" data-project="necrosis">
+        <div class="pg-carousel-container">
+          <div class="pg-carousel" role="region" aria-label="Carrusel de imágenes del proyecto Necrosis">
+            <div class="pg-carousel-track">
+              <figure class="pg-carousel-slide" aria-current="true">
+                <img src="../public/img/NECROSIS.webp" alt="Logotipo Necrosis - diseño de logo para banda de música" loading="lazy">
+                <figcaption>Logotipo</figcaption>
+              </figure>
+              <figure class="pg-carousel-slide">
+                <img src="../public/img/necrosis-cover.jpg" alt="Portada de disco Necrosis - diseño editorial" loading="lazy">
+                <figcaption>Portada de Disco</figcaption>
+              </figure>
+              <figure class="pg-carousel-slide">
+                <img src="../public/img/necrosis-cover.jpg" alt="Bocetos y proceso creativo de Necrosis" loading="lazy">
+                <figcaption>Bocetos</figcaption>
+              </figure>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="pg-carousel-controls" role="group" aria-label="Controles del carrusel">
+              <button class="pg-carousel-btn pg-carousel-prev" aria-label="Imagen anterior" type="button">
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button class="pg-carousel-btn pg-carousel-next" aria-label="Imagen siguiente" type="button">
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="pg-carousel-dots" role="tablist" aria-label="Indicadores de slides">
+              <button class="pg-carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+              <button class="pg-carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+              <button class="pg-carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pg-project-content">
+          <div class="pg-project-header">
+            <h2>Necrosis</h2>
+            <span class="pg-project-category">Diseño Editorial</span>
+          </div>
+
+          <p class="pg-project-description">Proyecto integral de identidad visual y diseño editorial para banda de música Necrosis. Se desarrolló logotipo distintivo, portada de disco y material promocional con estética visual cohesiva.</p>
+
+          <div class="pg-project-details">
+            <div class="pg-detail-item">
+              <h3>Disciplinas</h3>
+              <ul>
+                <li>Diseño de Logo</li>
+                <li>Diseño Editorial</li>
+                <li>Branding Musical</li>
+                <li>Diagramación</li>
+              </ul>
+            </div>
+
+            <div class="pg-detail-item">
+              <h3>Especificaciones</h3>
+              <ul>
+                <li>Formato: Digital & Impreso</li>
+                <li>Año: 2024</li>
+                <li>Resolución: 300 DPI</li>
+                <li>Cámara: Canon R6</li>
+              </ul>
+            </div>
+
+            <div class="pg-detail-item">
+              <h3>Tecnología</h3>
+              <ul>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Adobe InDesign</li>
+                <li>Lightroom</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="pg-project-full-description">
+            Este proyecto representó un desafío creativo única al combinar elementos visuales oscuros y poderosos con una composición que capturara la esencia de la banda. La paleta de colores fue cuidadosamente seleccionada para transmitir intensidad y profesionalismo.
+          </p>
+        </div>
+      </article>
+
+      <!-- Project Card 2: Catálogo NewConcept -->
+      <article class="pg-project-card" data-project="newconcept">
+        <div class="pg-carousel-container">
+          <div class="pg-carousel" role="region" aria-label="Carrusel de imágenes del proyecto NewConcept">
+            <div class="pg-carousel-track">
+              <figure class="pg-carousel-slide" aria-current="true">
+                <img src="../public/img/newconcept-1.jpg" alt="Fotografía de mobiliario NewConcept" loading="lazy">
+                <figcaption>Producto 1</figcaption>
+              </figure>
+              <figure class="pg-carousel-slide">
+                <img src="../public/img/newconcept-2.jpg" alt="Detalle de mobiliario con iluminación profesional" loading="lazy">
+                <figcaption>Detalle</figcaption>
+              </figure>
+            </div>
+
+            <div class="pg-carousel-controls" role="group" aria-label="Controles del carrusel">
+              <button class="pg-carousel-btn pg-carousel-prev" aria-label="Imagen anterior" type="button">
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button class="pg-carousel-btn pg-carousel-next" aria-label="Imagen siguiente" type="button">
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+
+            <div class="pg-carousel-dots" role="tablist" aria-label="Indicadores de slides">
+              <button class="pg-carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+              <button class="pg-carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pg-project-content">
+          <div class="pg-project-header">
+            <h2>NewConcept Catálogo</h2>
+            <span class="pg-project-category">Fotografía Comercial</span>
+          </div>
+
+          <p class="pg-project-description">Fotografía de producto profesional para catálogo de muebles NewConcept. Iluminación controlada y composición cuidada para resaltar la calidad y diseño de cada pieza.</p>
+
+          <div class="pg-project-details">
+            <div class="pg-detail-item">
+              <h3>Disciplinas</h3>
+              <ul>
+                <li>Fotografía Comercial</li>
+                <li>Fotografía de Producto</li>
+                <li>Iluminación</li>
+                <li>Retoque Digital</li>
+              </ul>
+            </div>
+
+            <div class="pg-detail-item">
+              <h3>Especificaciones</h3>
+              <ul>
+                <li>Cámara: Canon R6</li>
+                <li>Lentes: 24-70mm f/2.8</li>
+                <li>ISO: 100-400</li>
+                <li>Formato: RAW + JPEG</li>
+              </ul>
+            </div>
+
+            <div class="pg-detail-item">
+              <h3>Post-Producción</h3>
+              <ul>
+                <li>Edición en Lightroom</li>
+                <li>Retoque en Photoshop</li>
+                <li>Corrección de Color</li>
+                <li>Optimización Web</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project Card 3: CasaEvo Ambientes -->
+      <article class="pg-project-card" data-project="casaevo">
+        <div class="pg-carousel-container">
+          <div class="pg-carousel" role="region" aria-label="Carrusel de imágenes del proyecto CasaEvo">
+            <div class="pg-carousel-track">
+              <figure class="pg-carousel-slide" aria-current="true">
+                <img src="../public/img/casaevo-ambiente.jpg" alt="Ambiente completo de mobiliario CasaEvo" loading="lazy">
+                <figcaption>Ambiente</figcaption>
+              </figure>
+              <figure class="pg-carousel-slide">
+                <img src="../public/img/casaevo-detalle.jpg" alt="Detalle de textura y acabados CasaEvo" loading="lazy">
+                <figcaption>Detalle</figcaption>
+              </figure>
+            </div>
+
+            <div class="pg-carousel-controls" role="group" aria-label="Controles del carrusel">
+              <button class="pg-carousel-btn pg-carousel-prev" aria-label="Imagen anterior" type="button">
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button class="pg-carousel-btn pg-carousel-next" aria-label="Imagen siguiente" type="button">
+                <span aria-hidden="true">›</span>
+              </button>
+            </div>
+
+            <div class="pg-carousel-dots" role="tablist" aria-label="Indicadores de slides">
+              <button class="pg-carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+              <button class="pg-carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pg-project-content">
+          <div class="pg-project-header">
+            <h2>CasaEvo Ambientes</h2>
+            <span class="pg-project-category">Fotomontaje</span>
+          </div>
+
+          <p class="pg-project-description">Fotomontajes profesionales para submarca CasaEvo. Composiciones de espacios completos integrando múltiples elementos fotográficos con edición avanzada.</p>
+
+          <div class="pg-project-details">
+            <div class="pg-detail-item">
+              <h3>Disciplinas</h3>
+              <ul>
+                <li>Fotomontaje</li>
+                <li>Composición Digital</li>
+                <li>Edición Avanzada</li>
+                <li>Color Grading</li>
+              </ul>
+            </div>
+
+            <div class="pg-detail-item">
+              <h3>Especificaciones</h3>
+              <ul>
+                <li>Resolución: 4K +</li>
+                <li>Capas: 15-25 elementos</li>
+                <li>Tiempo: 8-12 horas/proyecto</li>
+                <li>Formato: PSD + JPG</li>
+              </ul>
+            </div>
+
+            <div class="pg-detail-item">
+              <h3>Software</h3>
+              <ul>
+                <li>Photoshop CC 2024</li>
+                <li>Lightroom Classic</li>
+                <li>Camera Raw Filter</li>
+                <li>Content-Aware Fill</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Técnicas y Equipamiento -->
+    <section class="pg-techniques">
+      <h2>Técnicas y Equipamiento</h2>
+      
+      <div class="pg-techniques-grid">
+        <article class="pg-technique-card">
+          <h3>🎥 Equipamiento</h3>
+          <ul>
+            <li><strong>Cámara:</strong> Canon EOS R6 (20MP)</li>
+            <li><strong>Lentes:</strong> 24-70mm f/2.8L, 16-35mm f/2.8L</li>
+            <li><strong>Iluminación:</strong> LED panels, softboxes profesionales</li>
+            <li><strong>Trípodes y soportes:</strong> Manfrotto Pro</li>
+          </ul>
+        </article>
+
+        <article class="pg-technique-card">
+          <h3>🎨 Edición Digital</h3>
+          <ul>
+            <li><strong>Lightroom:</strong> Importación y catalogación</li>
+            <li><strong>Photoshop:</strong> Retoque y composición</li>
+            <li><strong>Color Grading:</strong> Coherencia visual</li>
+            <li><strong>Exportación:</strong> Optimización web y print</li>
+          </ul>
+        </article>
+
+        <article class="pg-technique-card">
+          <h3>📐 Principios</h3>
+          <ul>
+            <li><strong>Composición:</strong> Regla de tercios y líneas fuertes</li>
+            <li><strong>Iluminación:</strong> Three-point lighting profesional</li>
+            <li><strong>Perspectiva:</strong> Ángulos y profundidad</li>
+            <li><strong>Postproducción:</strong> Consistencia visual</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="../contact.html">Contacto</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/searchbar.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/pg-carousel.js"></script>
+
+</body>
+</html>
