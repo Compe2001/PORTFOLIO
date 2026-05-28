@@ -118,7 +118,7 @@ body {
   border-top:
     6px solid var(--accent-color);
 
-  animation: spin 1s linear infinite;
+  animation: spin 2s linear infinite;
 
   margin-bottom: 1rem;
 }
@@ -296,9 +296,7 @@ header {
   text-decoration: none;
 }
 
-/* =========================
-   SEARCH
-========================= */
+
 
 .search-container {
   display: flex;
@@ -367,7 +365,7 @@ header {
 ========================= */
 
 nav {
-  position: sticky;
+  position: relative;
   top: 0;
 
   display: flex;
@@ -696,10 +694,12 @@ footer a {
     gap: 0.7rem;
   }
 
+.search-container { width: 78%; height: 46px; gap: 0.4rem; margin-right: auto; margin-left: 0; } .search-container input { padding: 0.7rem 0.9rem; font-size: 0.95rem; } .search-container button { padding: 0.7rem 0.95rem; font-size: 0.9rem; }
+  
   .hero {
     flex-direction: column;
 
-    text-align: center;
+    text-align: left;
   }
 
   .hero-description {
@@ -707,7 +707,7 @@ footer a {
   }
 
   .search-container {
-    width: 100%;
+    width: 80%;
   }
 
   main h1 {
