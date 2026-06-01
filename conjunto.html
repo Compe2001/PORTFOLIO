@@ -1,0 +1,1042 @@
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Buscar..." />
+      <button onclick="handleSearch()">🔍</button>
+    </div>
+    <div id="searchResults"></div>
+  </header>
+
+ <nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../pages/services.html">Servicios</a>
+  <a href="../pages/proyectos.html">Proyectos</a>
+  <a href="../pages/contact.html">Contacto</a>
+</nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <h1>Servicios Profesionales</h1>
+      <p>Soluciones creativas integrales en diseño gráfico, desarrollo web y producción audiovisual. Transformamos ideas en experiencias visuales impactantes.</p>
+    </section>
+
+    <!-- Servicios principales -->
+    <section class="services-grid">
+      <!-- Diseño Gráfico -->
+      <div class="service-card">
+        <div class="service-icon">🖊️</div>
+        <h3>Diseño Gráfico</h3>
+        <p>Creación de identidades visuales sólidas y materiales de marketing que comunican tu marca de manera efectiva.</p>
+        <ul class="service-features">
+          <li>Logotipos e imagotipos</li>
+          <li>Identidad corporativa</li>
+          <li>Diseño de packaging</li>
+          <li>Materiales de marketing</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Desarrollo Web -->
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Desarrollo Web</h3>
+        <p>Sitios web y landing pages responsivos, optimizados para conversión y experiencia de usuario excepcional.</p>
+        <ul class="service-features">
+          <li>Landing pages</li>
+          <li>Sitios web responsivos</li>
+          <li>E-commerce</li>
+          <li>Optimización SEO</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Fotografía -->
+      <div class="service-card">
+        <div class="service-icon">📸</div>
+        <h3>Fotografía Profesional</h3>
+        <p>Fotografía artística, comercial y de eventos con enfoque en composición, iluminación y storytelling visual.</p>
+        <ul class="service-features">
+          <li>Fotografía de producto</li>
+          <li>Sesiones corporativas</li>
+          <li>Cobertura de eventos</li>
+          <li>Retoque y edición</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Audiovisual -->
+      <div class="service-card">
+        <div class="service-icon">🎬</div>
+        <h3>Producción Audiovisual</h3>
+        <p>Edición de video, animaciones motion graphics y contenido audiovisual para redes sociales y marketing.</p>
+        <ul class="service-features">
+          <li>Edición de video</li>
+          <li>Motion graphics</li>
+          <li>Animaciones 2D/3D</li>
+          <li>Producción de contenido</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Branding -->
+      <div class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Branding Integral</h3>
+        <p>Estrategia completa de marca que abarca desde identidad visual hasta posicionamiento en el mercado.</p>
+        <ul class="service-features">
+          <li>Estrategia de marca</li>
+          <li>Guía de estilo</li>
+          <li>Posicionamiento visual</li>
+          <li>Consultoría creativa</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+
+      <!-- Consultoría Creativa -->
+      <div class="service-card">
+        <div class="service-icon">🚀</div>
+        <h3>Consultoría Creativa</h3>
+        <p>Asesoramiento estratégico en comunicación visual, dirección de arte y optimización de proyectos creativos.</p>
+        <ul class="service-features">
+          <li>Dirección de arte</li>
+          <li>Auditoría visual</li>
+          <li>Estrategia de contenido</li>
+          <li>Capacitación creativa</li>
+        </ul>
+        <button class="service-cta" onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })">Cotizar</button>
+      </div>
+    </section>
+
+    <!-- Proceso de trabajo -->
+    <section class="process-section">
+      <h2>Nuestro Proceso</h2>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Descubrimiento</h3>
+          <p>Entendemos tu visión, objetivos y público objetivo a través de consultas detalladas.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Estrategia</h3>
+          <p>Desarrollamos una estrategia creativa basada en investigación y análisis de mercado.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Diseño</h3>
+          <p>Creamos propuestas visuales innovadoras y alineadas con tus necesidades.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Refinamiento</h3>
+          <p>Iteramos y ajustamos los detalles hasta alcanzar la perfección visual.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <h3>Entrega</h3>
+          <p>Proporcionamos archivos de alta calidad y soporte post-proyecto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="faq-section">
+      <h2>Preguntas Frecuentes</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Cuál es el tiempo de entrega para un proyecto?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          El tiempo varía según la complejidad del proyecto. Típicamente: diseño gráfico simple (1-2 semanas), sitios web (3-6 semanas), branding integral (4-8 semanas). Ofrecemos cronogramas personalizados según tus necesidades.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Qué incluye el precio de un proyecto?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Todos nuestros precios incluyen: consulta inicial, propuestas de diseño, hasta 3 rondas de revisiones, archivos finales en múltiples formatos, y soporte por 30 días post-entrega. Servicios adicionales tienen un costo extra.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Trabajan con startups y pequeños negocios?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Absolutamente. Trabajamos con empresas de todos los tamaños, desde emprendedores hasta grandes corporaciones. Ofrecemos soluciones escalables adaptadas a cualquier presupuesto.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Cuál es el proceso de revisión de proyectos?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Después de la propuesta inicial, tienes derecho a 3 rondas de revisiones. Cambios adicionales se cobran por hora. Realizamos seguimiento regular mediante reuniones virtuales y correo electrónico.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Ofrecen servicios de mantenimiento después del proyecto?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          Sí, ofrecemos planes de mantenimiento y soporte continuo para sitios web, actualizaciones de contenido, y asesoramiento creativo. Contáctanos para conocer nuestros paquetes de mantenimiento.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          ¿Retienen derechos sobre el trabajo creativo?
+          <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer">
+          No, todos los derechos del trabajo creativo se transfieren a ti una vez completado el pago. Tienes libertad total para usar y modificar el contenido según lo necesites.
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="cta-section" id="contact">
+      <h2>¿Listo para tu próximo proyecto?</h2>
+      <p>Contáctame hoy para discutir tu idea y encontrar la solución creativa perfecta para tu marca.</p>
+      <a href="./contact.html" class="cta-button">Contactar Ahora</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="contact.html">Contacto</a></p>
+  </footer>
+
+  <script src="../js/preloader.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/searchbar.js"></script>
+
+  <script>
+    // Toggle para FAQ
+    function toggleFAQ(button) {
+      const faqItem = button.parentElement;
+      faqItem.classList.toggle('active');
+    }
+
+    // Cerrar otros FAQ cuando abro uno
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== this.parentElement) {
+            item.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio completo de proyectos de Casiel Nicolás Rodríguez Vázquez">
+  <title>Proyectos | Creative Developer</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* Estilos para portafolio */
+    .portfolio-hero {
+      background: linear-gradient(135deg, var(--accent-color) 0%, rgba(0, 120, 215, 0.1) 100%);
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .portfolio-hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+
+    .portfolio-hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted-text);
+    }
+
+    /* Filtros */
+    .filter-container {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.7rem 1.5rem;
+      border: 2px solid var(--accent-color);
+      background: transparent;
+      color: var(--accent-color);
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    .filter-btn:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    /* Grid de proyectos */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .project-card-portfolio {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-left: 4px solid var(--accent-color);
+    }
+
+    .project-card-portfolio:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0, 120, 215, 0.2);
+    }
+
+    .project-image-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: var(--nav-bg);
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card-portfolio:hover .project-image-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .project-video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .project-video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .project-category {
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+    }
+
+    .project-content-portfolio {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-content-portfolio h3 {
+      font-size: 1.3rem;
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+      margin-top: 0;
+    }
+
+    .project-content-portfolio p {
+      color: var(--muted-text);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    .project-tech {
+      color: var(--accent-color);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+
+    .project-link {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      background: var(--accent-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      border: 2px solid var(--accent-color);
+    }
+
+    .project-link:hover {
+      background: transparent;
+      color: var(--accent-color);
+    }
+
+    .project-link.secondary {
+      background: var(--nav-bg);
+      color: var(--accent-color);
+      border-color: var(--accent-color);
+    }
+
+    .project-link.secondary:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    /* Video container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      height: 0;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Hide/Show basado en filtro */
+    .project-card-portfolio.hidden {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .portfolio-hero {
+        padding: 2rem 1rem;
+      }
+
+      .portfolio-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .filter-container {
+        gap: 0.5rem;
+      }
+
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .project-content-portfolio {
+        padding: 1rem;
+      }
+
+      .project-content-portfolio h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+
+    /* Estado vacío */
+    .empty-state {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--muted-text);
+    }
+
+    .empty-state h3 {
+      color: var(--text-color);
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader"></div>
+    <p>Cargando...</p>
+  </div>
+
+  <div id="content" style="display:none;"></div>
+
+  <header>
+    <button id="toggle-theme" class="theme-toggle">
+      <span>Modo 🌙 / ☀️</span>
+    </button>
+
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Buscar..." />
+      <button onclick="handleSearch()">🔍</button>
+    </div>
+    <div id="searchResults"></div>
+  </header>
+ <nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../pages/services.html">Servicios</a>
+  <a href="../pages/proyectos.html">Proyectos</a>
+  <a href="../pages/contact.html">Contacto</a>
+</nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="portfolio-hero">
+      <h1>Portafolio de Proyectos</h1>
+      <p>Una selección de mis mejores trabajos en diseño gráfico, desarrollo web, fotografía y audiovisual. Explora mis proyectos y descubre cómo puedo ayudarte.</p>
+    </section>
+
+    <!-- Filtros -->
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filterProjects('todos')">Todos</button>
+      <button class="filter-btn" onclick="filterProjects('branding')">Branding</button>
+      <button class="filter-btn" onclick="filterProjects('diseño-web')">Diseño Web</button>
+      <button class="filter-btn" onclick="filterProjects('fotografía')">Fotografía</button>
+      <button class="filter-btn" onclick="filterProjects('audiovisual')">Audiovisual</button>
+      <button class="filter-btn" onclick="filterProjects('producción-gráfica')">Producción Gráfica</button>
+    </div>
+
+    <!-- Grid de Proyectos -->
+    <section class="projects-grid" id="projectsContainer">
+      
+      <!-- BRANDING / LOGOFOLIO -->
+      <div class="project-card-portfolio" data-category="branding">
+        <div class="project-image-wrapper">
+          <img src="../public/img/logo-sensi.webp" alt="Logo Sensi Home" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Branding</span>
+          <h3>SENSI HOME</h3>
+          <p>Identidad visual completa para mueblería con showroom en Guadalajara. Desarrollo de logotipo, paleta de colores y guía de marca.</p>
+          <span class="project-tech">Logo • Identidad Visual • Packaging</span>
+          <div class="project-links">
+            <a href="../pages/logofolio.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="branding">
+        <div class="project-image-wrapper">
+          <img src="../public/img/IIcono_1.webp" alt="Rodmans Thrift Market" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Branding</span>
+          <h3>Rodmans Thrift Market</h3>
+          <p>Identidad visual para mercado de segunda mano con enfoque en sostenibilidad y estilo retro. Logo e imagotipo moderno.</p>
+          <span class="project-tech">Logo • Identidad • Diseño Gráfico</span>
+          <div class="project-links">
+            <a href="../pages/logofolio.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="branding">
+        <div class="project-image-wrapper">
+          <img src="../public/img/IGNIS-BALAM.webp" alt="IGNIS BALAM" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Branding</span>
+          <h3>IGNIS BALAM</h3>
+          <p>Identidad con inspiración en iconografía prehispánica. Paleta vibrante y tipografía única para proyecto cultural.</p>
+          <span class="project-tech">Logo • Color • Tipografía</span>
+          <div class="project-links">
+            <a href="../pages/logofolio.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="branding">
+        <div class="project-image-wrapper">
+          <img src="../public/img/MALTHUS-LOGO.webp" alt="Malthus Cerveza" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Branding</span>
+          <h3>Malthus</h3>
+          <p>Cerveza artesanal de origen jalisciense. Identidad visual enfocada en calidad y sabor auténtico con diseño premium.</p>
+          <span class="project-tech">Logo • Packaging • Etiquetas</span>
+          <div class="project-links">
+            <a href="../pages/logofolio.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="branding">
+        <div class="project-image-wrapper">
+          <img src="../public/img/LOGO-EDITIONS.gif" alt="NewConcept Editions" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Branding</span>
+          <h3>NewConcept Editions</h3>
+          <p>Línea de sillones premium para empresa de muebles. Identidad moderna y elegante con enfoque en lujo accesible.</p>
+          <span class="project-tech">Logo • Línea de Productos</span>
+          <div class="project-links">
+            <a href="../pages/logofolio.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DISEÑO WEB -->
+      <div class="project-card-portfolio" data-category="diseño-web">
+        <div class="project-image-wrapper">
+          <img src="../public/img/paranoia-web.webp" alt="Paranoia Tattoo" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Diseño Web</span>
+          <h3>Paranoia Tattoo</h3>
+          <p>Landing page moderna para estudio de tatuajes. Diseño responsivo con enfoque en UX y conversión de clientes.</p>
+          <span class="project-tech">HTML • CSS • JavaScript</span>
+          <div class="project-links">
+            <a href="https://compe2001.github.io/PARANOIA_TATTOO/" target="_blank" class="project-link">Ver Demo</a>
+            <a href="../pages/diseñoweb.html" class="project-link secondary">Más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="diseño-web">
+        <div class="project-image-wrapper">
+          <img src="../public/img/SENSI-WEB-COVER.jpg" alt="Sensi Home Web" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Diseño Web</span>
+          <h3>Sensi Home - Web</h3>
+          <p>Plataforma web modular para mueblería. Desarrollada con tecnologías modernas y optimización de UX/UI.</p>
+          <span class="project-tech">React • Node.js • Responsive Design</span>
+          <div class="project-links">
+            <a href="https://compe2001.github.io/Respaldo-sensihome/" target="_blank" class="project-link">Ver Demo</a>
+            <a href="../pages/diseñoweb.html" class="project-link secondary">Más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOTOGRAFÍA -->
+      <div class="project-card-portfolio" data-category="fotografía">
+        <div class="project-image-wrapper">
+          <img src="../public/img/delya-ambientado.webp" alt="Fotografía de producto" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Fotografía</span>
+          <h3>Fotografía de Producto</h3>
+          <p>Serie de fotografías de producto para Newconcept. Iluminación profesional y composición cuidada con CANON R6.</p>
+          <span class="project-tech">Fotografía • Retoque • Iluminación</span>
+          <div class="project-links">
+            <a href="../pages/fotografia.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="fotografía">
+        <div class="project-image-wrapper">
+          <img src="../public/img/fotodeproducto.webp" alt="Fotografía producto" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Fotografía</span>
+          <h3>Sesión Fotográfica - CasaEvo</h3>
+          <p>Fotomontaje profesional para línea de muebles CasaEvo. Captura de detalles y ambientación con estética minimalista.</p>
+          <span class="project-tech">Fotografía Comercial • Edición • Retoque</span>
+          <div class="project-links">
+            <a href="../pages/fotografia.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCCIÓN GRÁFICA -->
+      <div class="project-card-portfolio" data-category="producción-gráfica">
+        <div class="project-image-wrapper">
+          <img src="../public/img/NECROSIS.webp" alt="Necrosis - Banda" loading="lazy">
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Producción Gráfica</span>
+          <h3>Necrosis</h3>
+          <p>Diseño completo para banda de música. Logotipo, portada de disco y material de promoción visual con estética oscura.</p>
+          <span class="project-tech">Logo • Diseño Editorial • Branding Musical</span>
+          <div class="project-links">
+            <a href="./pages/producción gráfica.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- AUDIOVISUAL -->
+      <div class="project-card-portfolio" data-category="audiovisual">
+        <div class="project-video-wrapper">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/iQigwwqFWxM"
+            title="Reels de producto para Sensi Home"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Audiovisual</span>
+          <h3>Reels de Producto - Sensi Home</h3>
+          <p>Serie de videos cortos para redes sociales. Mostración de identidad visual aplicada a mobiliario y branding.</p>
+          <span class="project-tech">Video • Motion • Social Media</span>
+          <div class="project-links">
+            <a href="./pages/audiovisual.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="audiovisual">
+        <div class="project-video-wrapper">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/N_yyGryQRI4"
+            title="Video agradecimiento Sensi Home"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Audiovisual</span>
+          <h3>Video Agradecimiento - Sensi Home</h3>
+          <p>Video de agradecimiento y recopilación de trabajos. Edición profesional con efectos y transiciones fluidas.</p>
+          <span class="project-tech">Edición • Motion Graphics • Efectos</span>
+          <div class="project-links">
+            <a href="./pages/audiovisual.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card-portfolio" data-category="audiovisual">
+        <div class="project-video-wrapper">
+          <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/4qKDmhhFsJc"
+            title="DV Creatividad y más"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="project-content-portfolio">
+          <span class="project-category">Audiovisual</span>
+          <h3>DV Creatividad y Más</h3>
+          <p>Producción audiovisual completa. Narrativa visual y cinematografía para proyecto creativo integral.</p>
+          <span class="project-tech">Video • Cinematografía • Producción</span>
+          <div class="project-links">
+            <a href="./pages/audiovisual.html" class="project-link">Ver más</a>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="./contact.html">Contacto</a></p>
+  </footer>
+
+  <script src="../js/preloader.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/searchbar.js"></script>
+
+  <script>
+    // Sistema de filtrado de proyectos
+    function filterProjects(category) {
+      const allCards = document.querySelectorAll('.project-card-portfolio');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      // Actualizar botón activo
+      filterBtns.forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // Filtrar proyectos
+      allCards.forEach(card => {
+        if (category === 'todos') {
+          card.classList.remove('hidden');
+        } else {
+          if (card.dataset.category === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+
+      // Scroll suave a los proyectos
+      document.querySelector('.projects-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Lazy loading de imágenes
+    if ('IntersectionObserver' in window) {
+      const images = document.querySelectorAll('img[loading="lazy"]');
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.src;
+            observer.unobserve(img);
+          }
+        });
+      });
+      images.forEach(img => imageObserver.observe(img));
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de categoría del portafolio de Casiel Nicolás Rodríguez Vázquez.">
+  <title>LOGOFOLIO | Casiel Nicolás Rodríguez Vázquez</title>
+<link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/carrusel.css">
+</head>
+<body>
+
+<header>
+  <button id="toggle-theme" class="theme-toggle" aria-pressed="false" aria-label="Alternar modo claro y oscuro">
+    <span class="theme-label">MODO</span>
+    <span aria-hidden="true"> 🌙 / ☀️</span>
+  </button>
+
+  <div class="search-container" role="search" aria-label="Buscar en el portafolio">
+    <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar proyectos">
+    <button id="searchButton" type="button" onclick="handleSearch()" aria-label="Iniciar búsqueda">🔍</button>
+    <div id="searchResults" aria-live="polite"></div>
+  </div>
+</header>
+
+ <nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../pages/services.html">Servicios</a>
+  <a href="../pages/proyectos.html">Proyectos</a>
+  <a href="../pages/contact.html">Contacto</a>
+</nav>
+
+<main class="category-page" id="main">
+  <!-- Encabezado de la categoría -->
+  <section class="category-header">
+    <h1>LOGOFOLIO</h1>
+    <p>Explora mis diseños de logotipos, identidad visual y branding.</p>
+  </section>
+
+  <!-- Grid de proyectos -->
+  <section class="projects" aria-label="Proyectos">
+    
+<div class="project-card">
+  <div class="logo-carousel">
+    <img src="../public/img/logo-sensi.webp" alt="Logo Sensi Home" class="active" loading="lazy">
+    <img src="../public/img/SENSI-HOME.gif" alt="Mockup Sensi Home" loading="lazy">
+    <img src="../public/img/etiqueta sensi home.JPG" alt="Mockup Sensi Home" loading="lazy">
+    <!-- Botones de navegación -->
+    <button class="carousel-btn prev" aria-label="Imagen anterior">⟨</button>
+    <button class="carousel-btn next" aria-label="Imagen siguiente">⟩</button>
+  </div>
+  <div class="project-content">
+    <h2>SENSI HOME</h2>
+    <p>SENSI HOME es una mueblería que cuenta con 1 showroom y una bodega en Guadalajara, Jalisco...</p>
+
+  </div>
+</div>
+
+<div class="project-card">
+  <div class="logo-carousel">
+    <img src="../public/img/NECROSIS.webp" alt="Logo Sensi Home" class="active" loading="lazy">
+    <img src="../public/img/necrosis portada.webp" alt="Mockup Sensi Home" loading="lazy">
+    <img src="../public/img/necrosis-cover.jpg" alt="Mockup Sensi Home" loading="lazy">
+    <img src="../public/img/necrosis boceto.webp" alt="Mockup Sensi Home" loading="lazy">
+    <!-- Botones de navegación -->
+    <button class="carousel-btn prev" aria-label="Imagen anterior">⟨</button>
+    <button class="carousel-btn next" aria-label="Imagen siguiente">⟩</button>
+  </div>
+  <div class="project-content">
+    <h2>SENSI HOME</h2>
+    <p>SENSI HOME es una mueblería que cuenta con 1 showroom y una bodega en Guadalajara, Jalisco...</p>
+
+  </div>
+</div>
+
+
+    <div class="project-card">
+      <img src="../public/img/IIcono_1.webp" alt="Logotipo Rodmans Thrift Market" loading="lazy" width="400" height="400">
+      <div class="project-content">
+        <h2>Rodmans Thrift Market</h2>
+        <p>Identidad visual enfocada en sostenibilidad y estilo retro, pensada para un mercado de segunda mano.</p>
+
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="../public/img/IGNIS-BALAM.webp" alt="Logotipo IGNIS BALAM" loading="lazy" width="400" height="400">
+      <div class="project-content">
+        <h2>IGNIS BALAM</h2>
+        <p>Proyecto de identidad con inspiración en iconografía prehispánica y paleta vibrante.</p>
+
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="../public/img/MALTHUS-LOGO.webp" alt="Logotipo Malthus" loading="lazy" width="400" height="400">
+      <div class="project-content">
+        <h2>Malthus</h2>
+        <p>Malthus es una cerveza artesanal de origen Jalisciense que surgió en 2022, con un enfoque en la calidad y el sabor auténtico.</p>
+        <a href="#" class="btn" aria-label="Ver más sobre Malthus">Ver más</a>
+      </div>
+    </div>
+
+  
+
+   <div class="project-card">
+      <div class="logo-carousel">
+    <img src="../public/img/LOGO-EDITIONS.gif" alt="Logo Sensi Home" class="active" loading="lazy" width="600" height="170">
+    <img src="../public/img/editions.webp" alt="Boceto Sensi Home" loading="lazy">
+
+    <!-- Botones de navegación -->
+    <button class="carousel-btn prev" aria-label="Imagen anterior">⟨</button>
+    <button class="carousel-btn next" aria-label="Imagen siguiente">⟩</button>
+  </div>
+            <h2>NEWCONCEPT EDITIONS</h2>
+        <p>Editions fue una línea de sillones por la empresa de fabricación e importación de muebles NewConcept.</p>
+  </div>
+
+
+
+
+    </div>
+
+
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="../contact.html">Contacto</a></p>
+</footer>
+
+<script src="../js/searchbar.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/carrusel.js"></script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página de categoría del portafolio de Casiel Nicolás Rodríguez Vázquez.">
+  <title>FOTOGRAFÍA | Casiel Nicolás Rodríguez Vázquez</title>
+ <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="/elements.css">
+</head>
+<body>
+
+<header>
+  <button id="toggle-theme" class="theme-toggle" aria-pressed="false" aria-label="Alternar modo claro y oscuro">
+    <span class="theme-label">MODO</span>
+    <span aria-hidden="true"> 🌙 / ☀️</span>
+  </button>
+
+  <div class="search-container" role="search" aria-label="Buscar en el portafolio">
+   
+    <input type="search" id="searchInput" placeholder="Buscar..." aria-label="Buscar proyectos">
+    <button id="searchButton" type="button" onclick="handleSearch()" aria-label="Iniciar búsqueda">🔍</button>
+    <div id="searchResults" aria-live="polite"></div>
+  </div>
+</header>
+
+ <nav>
+  <a href="../index.html">Inicio</a>
+  <a href="../pages/services.html">Servicios</a>
+  <a href="../pages/proyectos.html">Proyectos</a>
+  <a href="../pages/contact.html">Contacto</a>
+</nav>
+
+<main class="category-page" id="main">
+  <!-- Encabezado de la categoría -->
+  <section class="category-header">
+    <h1>FOTOGRAFÍA</h1>
+    <p>He trabajado con fotomontajes para la empresa Newconcept y su submarca CASAEVO</p>
+     <p>Se ha trabajado con camara CANON R6</p>
+  </section>
+
+  <!-- Grid de proyectos -->
+  <section class="projects" aria-label="Proyectos">
+    <div class="project-card">
+      <img src="../public/img/delya-ambientado.webp" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400"> <img src="../public/img/fotodeproducto.webp" alt="Logotipo de Sensi Home" loading="lazy" width="400" height="400">
+    </div>
+
+   
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Casiel Nicolás Rodríguez Vázquez | <a href="/contact.html">Contacto</a></p>
+</footer>
+
+<script src="../js/searchbar.js"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

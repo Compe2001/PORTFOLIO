@@ -22,7 +22,7 @@ css
   --card-bg: rgba(255,255,255,0.08);
   --nav-bg: rgba(255,255,255,0.06);
 
-  --accent-color: #73f2ff;
+  --accent-color: #24d7eb;
   --accent-secondary: #6f7dff;
 
   --muted-text: #5f6670;
@@ -43,8 +43,8 @@ body.dark-mode {
   --card-bg: rgba(255,255,255,0.05);
   --nav-bg: rgba(255,255,255,0.04);
 
-  --accent-color: #8ffcff;
-  --accent-secondary: #7f8cff;
+  --accent-color: #00ccff;
+  --accent-secondary: #3a47bd;
 
   --muted-text: #a8b0c2;
 
@@ -88,50 +88,8 @@ body {
     color 0.6s ease;
 }
 
-/* =========================
-   PRELOADER
-========================= */
 
-#preloader {
-  position: fixed;
 
-  inset: 0;
-
-  background: var(--bg-color);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 9999;
-}
-
-.loader {
-  width: 60px;
-  height: 60px;
-
-  border-radius: 50%;
-
-  border: 6px solid rgba(255,255,255,0.12);
-
-  border-top:
-    6px solid var(--accent-color);
-
-  animation: spin s linear infinite;
-
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* =========================
-   BACKGROUND FX
-========================= */
 
 #bg-shapes {
   position: fixed;
