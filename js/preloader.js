@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   const content   = document.getElementById("content");
 
   // Espera a que la animación de texto termine (~2.2s) antes del fade-out
+  
   setTimeout(() => {
     preloader.style.opacity = "0";
     setTimeout(() => {

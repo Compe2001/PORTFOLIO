@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Precios — Servicios Web</title>
+  <style>
+    /* ESTILOS BIEN CHULOS A LA VERGA COMO NO*/
+    :root {
+      --color-primario:    #1e3a6e;
+      --color-acento:      #2d5aa0;
+      --color-fondo:       #f7f9fc;
+      --color-superficie:  #ffffff;
+      --color-borde:       #dce3f0;
+      --color-texto:       #1a1a2e;
+      --color-texto-suave: #5a6080;
+
+      /* Colores */
+      --color-dev-bg:      #eaf4ee;
+      --color-dev-texto:   #1a5c2a;
+      --color-agencia-bg:  #eef2fb;
+      --color-agencia-texto: #1e3a6e;
+      --color-cliente-bg:  #fff8ec;
+      --color-cliente-texto: #7a4800;
+
+      --radio:  10px;
+      --fuente: 'Segoe UI', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--fuente);
+      background: var(--color-fondo);
+      color: var(--color-texto);
+      padding: 40px 24px;
+      min-height: 100vh;
+    }
+
+    /* ── Encabezado ── */
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: var(--color-primario);
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 0.92rem;
+      color: var(--color-texto-suave);
+      margin-top: 6px;
+    }
+
+    /* ── Leyenda ── */
+    .leyenda {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .leyenda-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.83rem;
+      font-weight: 600;
+    }
+    .leyenda-dot {
+      width: 13px; height: 13px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Sección ── */
+    .seccion {
+      background: var(--color-superficie);
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radio);
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 10px rgba(30,58,110,0.07);
+    }
+    .seccion-titulo {
+      background: var(--color-primario);
+      color: #fff;
+      padding: 14px 22px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .seccion-titulo .icono { font-size: 1.1rem; }
+
+    /* ── Tabla ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead tr {
+      background: #f0f3fa;
+    }
+    thead th {
+      padding: 11px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--color-texto-suave);
+      text-align: center;
+      border-bottom: 2px solid var(--color-borde);
+    }
+    thead th:first-child { text-align: left; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--color-borde);
+      transition: background 0.15s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #f7f9ff; }
+
+    td {
+      padding: 13px 14px;
+      font-size: 0.9rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: var(--color-texto);
+    }
+    td.tiempo {
+      color: var(--color-texto-suave);
+      font-size: 0.85rem;
+    }
+
+    /* Chip de precio */
+    .precio {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .precio-dev      { background: var(--color-dev-bg);      color: var(--color-dev-texto); }
+    .precio-agencia  { background: var(--color-agencia-bg);  color: var(--color-agencia-texto); }
+    .precio-cliente  { background: var(--color-cliente-bg);  color: var(--color-cliente-texto); }
+
+    /* Fila especial hosting */
+    .nota-hosting {
+      font-size: 0.78rem;
+      color: var(--color-texto-suave);
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    /* ── Notas al pie ── */
+    .notas {
+      background: #f0f4fb;
+      border: 1px solid var(--color-borde);
+      border-radius: var(--radio);
+      padding: 18px 22px;
+      font-size: 0.83rem;
+      color: var(--color-texto-suave);
+      line-height: 1.7;
+    }
+    .notas strong { color: var(--color-primario); }
+    .notas ul { padding-left: 18px; }
+    .notas li { margin-bottom: 4px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .precio { font-size: 0.78rem; padding: 3px 8px; }
+      td, th { padding: 9px 8px; }
+      header h1 { font-size: 1.4rem; }
+    }
+
+    @media print {
+      body { background: #fff; padding: 20px; }
+      .seccion { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lista de Precios — Servicios Web</h1>
+    <p>Documento interno · Distribución de costos por beneficiario</p>
+  </header>
+
+  <!-- LEYENDA -->
+  <div class="leyenda">
+    <div class="leyenda-item">
+      <div class="leyenda-dot" style="background:#2e7d45"></div>
+      <span>💻 Desarrollo</span>
+    </div>
+    <div class="leyenda-item">
+      <div class="leyenda-dot" style="background:#2d5aa0"></div>
+      <span>🏢 Agencia</span>
+    </div>
+    <div class="leyenda-item">
+      <div class="leyenda-dot" style="background:#e6a020"></div>
+      <span>👤 Total cliente final</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECCIÓN 1: DESARROLLO WEB
+       Fórmula: Cliente final = precio base
+       Dev = 70% del precio base | Agencia = 30% del precio base
+       PARA EDITAR: cambia los valores en data-base de cada <tr>
+       ============================================================ -->
+  <div class="seccion">
+    <div class="seccion-titulo">
+      <span class="icono">🖥️</span>
+      Desarrollo Web
+      <small style="font-weight:400; margin-left:auto; opacity:0.8"></small>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Tiempo Est.</th>
+          <th>💻 Desarrollo</th>
+          <th>🏢 Agencia</th>
+          <th>👤 Total Cliente Final</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-desarrollo">
+        <!--
+          data-base = precio que paga el cliente final
+          Dev recibe 70%, Agencia recibe 30%
+          Para editar un precio: cambia el número en data-base
+          Para editar un servicio: cambia el texto en <td class="nombre">
+        -->
+        <tr data-base="2500">
+          <td class="nombre">Landing Page básica</td>
+          <td class="tiempo">2–4 días</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="4500">
+          <td class="nombre">Landing Page premium</td>
+          <td class="tiempo">4–6 días</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="6000">
+          <td class="nombre">Sitio web básico <small style="font-weight:400">(hasta 5 secciones)</small></td>
+          <td class="tiempo">1 semana</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="8500">
+          <td class="nombre">Sitio web empresarial <small style="font-weight:400">(hasta 10 secciones)</small></td>
+          <td class="tiempo">1–2 semanas</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="10000">
+          <td class="nombre">Sitio web con blog</td>
+          <td class="tiempo">1–2 semanas</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="15000">
+          <td class="nombre">Ecommerce básico</td>
+          <td class="tiempo">2–3 semanas</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="25000">
+          <td class="nombre">Ecommerce intermedio</td>
+          <td class="tiempo">1 mes</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="8000">
+          <td class="nombre">Catálogo en línea <small style="font-weight:400">(sin pagos)</small></td>
+          <td class="tiempo">1–2 semanas</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="5000" data-desde="true">
+          <td class="nombre">Rediseño de sitio web</td>
+          <td class="tiempo">1–2 semanas</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================
+       SECCIÓN 2: HOSTING
+       Dev = $180 fijo | Agencia = $100 fijo | Cliente = $280
+       PARA EDITAR: cambia DEV_HOSTING y AGENCIA_HOSTING en el JS
+       ============================================================ -->
+  <div class="seccion">
+    <div class="seccion-titulo">
+      <span class="icono">☁️</span>
+      Hosting
+      <small style="font-weight:400; margin-left:auto; opacity:0.8">Mensual · Montos fijos</small>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Periodicidad</th>
+          <th>💻 Servidor</th>
+          <th>🏢 Agencia</th>
+          <th>👤 Total Cliente Final</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-hosting">
+        <!-- Generado por JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ============================================================
+       SECCIÓN 3: MANTENIMIENTO
+       Dev 70% · Agencia 30%
+       PARA EDITAR: agrega o modifica filas igual que desarrollo
+       ============================================================ -->
+  <div class="seccion">
+    <div class="seccion-titulo">
+      <span class="icono">🔧</span>
+      Mantenimiento
+      <small style="font-weight:400; margin-left:auto; opacity:0.8"></small>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Servicio</th>
+          <th>Periodicidad</th>
+          <th>💻 Desarrolladores</th>
+          <th>🏢 Agencia</th>
+          <th>👤 Total Cliente Final</th>
+        </tr>
+      </thead>
+      <tbody id="tabla-mantenimiento">
+        <!--
+          Misma lógica que desarrollo: data-base = lo que paga el cliente
+          Edita los valores según tus tarifas de mantenimiento
+        -->
+        <tr data-base="1500">
+          <td class="nombre">Mantenimiento básico</td>
+          <td class="tiempo">Mensual</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="3000">
+          <td class="nombre">Mantenimiento estándar</td>
+          <td class="tiempo">Mensual</td>
+          <td></td><td></td><td></td>
+        </tr>
+        <tr data-base="5500">
+          <td class="nombre">Mantenimiento premium</td>
+          <td class="tiempo">Mensual</td>
+          <td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NOTAS -->
+  <div class="notas">
+    <strong>Notas:</strong>
+    <ul>
+      <li>El nombre de dominio está <strong>cubierto los primeros 3 meses</strong> con el plan de hosting.</li>
+      <li>Si el cliente requiere un dominio con costo mayor al cubierto, la diferencia se <strong>externaliza al cliente final</strong>.</li>
+      <li>El precio al cliente final puede ajustarse; estos valores son la base mínima sugerida.</li>
+      <li>Precios en <strong>MXN</strong>. No incluyen IVA. Tiempos estimados pueden variar según complejidad.</li>
+    </ul>
+  </div>
+
+  <script>
+    // ============================================================
+    // CONFIGURACIÓN — EDITA ESTOS VALORES
+    // ============================================================
+    const DEV_PCT       = 0.70;  // % que reciben los desarrolladores (desarrollo y mantenimiento)
+    const AGENCIA_PCT   = 0.30;  // % que recibe la agencia (desarrollo y mantenimiento)
+
+    const DEV_HOSTING     = 180; // $ fijo mensual para desarrolladores (hosting)
+    const AGENCIA_HOSTING = 100; // $ fijo mensual para agencia (hosting)
+    // El cliente paga la suma de ambos automáticamente
+    // ============================================================
+
+    const fmt = (n, desde = false) =>
+      (desde ? 'Desde ' : '') +
+      '$' + Number(n).toLocaleString('es-MX', { minimumFractionDigits: 0 }) + ' MXN';
+
+    // Desarrollo y Mantenimiento (70/30)
+    function llenarTabla(tbodyId, devPct, agenciaPct) {
+      const tbody = document.getElementById(tbodyId);
+      tbody.querySelectorAll('tr[data-base]').forEach(tr => {
+        const base   = parseFloat(tr.dataset.base);
+        const desde  = tr.dataset.desde === 'true';
+        const dev    = base * devPct;
+        const ag     = base * agenciaPct;
+        const tds    = tr.querySelectorAll('td');
+        tds[2].innerHTML = `<span class="precio precio-dev">${fmt(dev, desde)}</span>`;
+        tds[3].innerHTML = `<span class="precio precio-agencia">${fmt(ag, desde)}</span>`;
+        tds[4].innerHTML = `<span class="precio precio-cliente">${fmt(base, desde)}</span>`;
+      });
+    }
+
+    // Hosting (montos fijos)
+    function llenarHosting() {
+      const tbody  = document.getElementById('tabla-hosting');
+      const total  = DEV_HOSTING + AGENCIA_HOSTING;
+      tbody.innerHTML = `
+        <tr>
+          <td class="nombre">
+            Hosting personal
+            <div class="nota-hosting">Incluye dominio cubierto los primeros 3 meses</div>
+          </td>
+          <td class="tiempo">Mensual</td>
+          <td><span class="precio precio-dev">${fmt(DEV_HOSTING)}</span></td>
+          <td><span class="precio precio-agencia">${fmt(AGENCIA_HOSTING)}</span></td>
+          <td><span class="precio precio-cliente">${fmt(total)}</span></td>
+        </tr>`;
+    }
+
+    // Inicializar
+    llenarTabla('tabla-desarrollo',    DEV_PCT, AGENCIA_PCT);
+    llenarTabla('tabla-mantenimiento', DEV_PCT, AGENCIA_PCT);
+    llenarHosting();
+  </script>
+
+</body>
+</html>
