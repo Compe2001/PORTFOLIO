@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catálogo de Servicios — Desarrollo Web</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+  :root {
+    /* ===== PALETA — edita aquí para cambiar colores globales ===== */
+    --ink:         #15233d;
+    --ink-soft:    #5a6c87;
+    --blueprint:   #3a6ea5;
+    --paper:       #eef3f8;
+    --card:        #ffffff;
+    --line:        #d3deed;
+    --accent:      #ff6b40;
+    --accent-deep: #d9501f;
+    --accent-soft: #ffe6da;
+
+    --radius: 14px;
+    --font-display: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background-color: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(58,110,165,0.06) 0px, rgba(58,110,165,0.06) 1px, transparent 1px, transparent 36px),
+      repeating-linear-gradient(90deg, rgba(58,110,165,0.06) 0px, rgba(58,110,165,0.06) 1px, transparent 1px, transparent 36px);
+    line-height: 1.6;
+  }
+
+  .page { max-width: 980px; margin: 0 auto; padding: 0 24px 40px; }
+
+  /* ===== HERO ===== */
+  .hero { padding: 56px 0 32px; text-align:center; }
+  .eyebrow {
+    display:inline-block; font-family: var(--font-mono); font-size:0.78rem;
+    letter-spacing:2px; text-transform:uppercase; color: var(--blueprint);
+    border:1px solid var(--line); border-radius: 999px; padding:5px 16px;
+    background: var(--card); margin-bottom:18px;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-weight:800; font-size: clamp(2rem, 5vw, 3rem);
+    letter-spacing:-1px; margin-bottom:14px;
+  }
+  .hero p { color: var(--ink-soft); font-size:1.02rem; max-width:640px; margin:0 auto; }
+
+  /* ===== LEYENDA ===== */
+  .legend {
+    background: var(--card); border:1px solid var(--line); border-radius: var(--radius);
+    padding:20px 24px; margin: 32px 0 48px; font-size:0.88rem; color: var(--ink-soft);
+    display:flex; gap:28px; flex-wrap:wrap; align-items:flex-start;
+  }
+  .legend-item { display:flex; gap:10px; flex:1 1 260px; }
+  .legend-item .ico { font-size:1.1rem; flex-shrink:0; }
+  .legend-item strong { color: var(--ink); display:block; margin-bottom:2px; }
+
+  /* ===== TOC ===== */
+  .toc { display:flex; gap:10px; flex-wrap:wrap; margin-bottom: 56px; justify-content:center; }
+  .toc a {
+    font-family: var(--font-mono); font-size:0.8rem; text-decoration:none; color: var(--blueprint);
+    border:1px solid var(--line); border-radius:8px; padding:8px 14px; background: var(--card);
+    transition: all .15s;
+  }
+  .toc a:hover { border-color: var(--blueprint); background: var(--accent-soft); color: var(--accent-deep); }
+
+  /* ===== CATEGORÍAS ===== */
+  .category { margin-bottom: 64px; }
+  .category-head { display:flex; align-items:baseline; gap:18px; margin-bottom: 28px; }
+  .cat-index { font-family: var(--font-mono); font-size:2.4rem; font-weight:600; color: var(--line); line-height:1; }
+  .category-head h2 { font-family: var(--font-display); font-size:1.5rem; font-weight:700; }
+
+  /* ===== TARJETA DE SERVICIO ===== */
+  .card {
+    background: var(--card); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 28px; margin-bottom: 22px; position:relative;
+  }
+  .ref-code {
+    position:absolute; top:20px; right:26px; font-family: var(--font-mono); font-size:0.72rem;
+    color: var(--line); letter-spacing:1px;
+  }
+  .card-top { display:flex; gap:28px; flex-wrap:wrap; margin-bottom:22px; }
+  .card-info { flex:1 1 320px; }
+  .card-info h3 { font-family: var(--font-display); font-size:1.28rem; font-weight:700; margin-bottom:8px; }
+  .time-badge {
+    display:inline-flex; align-items:center; gap:6px; font-family: var(--font-mono); font-size:0.78rem;
+    color: var(--blueprint); background: var(--paper); border:1px solid var(--line);
+    border-radius:6px; padding:3px 10px; margin-bottom:12px;
+  }
+  .card-info .desc { color: var(--ink-soft); font-size:0.94rem; }
+
+  .price-tag {
+    flex: 0 0 190px; background: var(--accent-soft); border:1px solid var(--accent);
+    border-radius: 10px; padding:16px 18px; text-align:center; align-self:flex-start;
+    margin-top: 22px;
+  }
+  .price-label { display:block; font-family: var(--font-mono); font-size:0.68rem; text-transform:uppercase;
+    letter-spacing:1.5px; color: var(--accent-deep); margin-bottom:6px; }
+  .price-value { display:block; font-family: var(--font-display); font-size:1.55rem; font-weight:800; color: var(--ink); white-space:nowrap; }
+  .price-unit { display:block; font-family: var(--font-mono); font-size:0.7rem; color: var(--ink-soft); margin-top:2px; }
+
+  /* ===== NECESIDADES ===== */
+  .needs, .timeline { margin-bottom:22px; }
+  .needs h4, .timeline h4 {
+    font-family: var(--font-mono); font-size:0.74rem; text-transform:uppercase; letter-spacing:1.5px;
+    color: var(--blueprint); margin-bottom:10px;
+  }
+  .needs ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .needs li { padding-left:22px; position:relative; font-size:0.92rem; color: var(--ink); }
+  .needs li::before { content:'→'; position:absolute; left:0; color: var(--accent); font-weight:700; }
+
+  /* ===== LÍNEA DE TIEMPO / FASES ===== */
+  .phases { list-style:none; display:flex; position:relative; padding-top:6px; gap:4px; }
+  .phases::before {
+    content:''; position:absolute; top:20px; left:14px; right:14px; height:2px; background: var(--line); z-index:0;
+  }
+  .phases li { flex:1; display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; gap:8px; }
+  .phase-num {
+    width:28px; height:28px; border-radius:50%; background: var(--card); border:2px solid var(--blueprint);
+    display:flex; align-items:center; justify-content:center; font-family: var(--font-mono); font-weight:600;
+    font-size:0.82rem; color: var(--blueprint); flex-shrink:0;
+  }
+  .phase-name { font-size:0.78rem; color: var(--ink-soft); line-height:1.35; max-width:120px; }
+
+  @media (max-width: 720px) {
+    .phases { flex-direction:column; align-items:flex-start; gap:14px; }
+    .phases::before { display:none; }
+    .phases li { flex-direction:row; text-align:left; max-width:none; }
+    .phase-name { max-width:none; }
+    .price-tag { flex-basis:100%; }
+  }
+
+  /* ===== DESGLOSE INTERNO ===== */
+  details.internal { margin-top:6px; border-top:1px dashed var(--line); padding-top:14px; }
+  details.internal summary {
+    cursor:pointer; font-family: var(--font-mono); font-size:0.78rem; color: var(--ink-soft);
+    letter-spacing:0.5px; outline:none; list-style:none;
+  }
+  details.internal summary::-webkit-details-marker { display:none; }
+  details.internal summary::before { content:'▸ '; color: var(--blueprint); }
+  details.internal[open] summary::before { content:'▾ '; }
+  details.internal summary:hover { color: var(--blueprint); }
+  .internal-grid { display:flex; gap:28px; margin-top:14px; flex-wrap:wrap; }
+  .internal-grid div { font-size:0.85rem; }
+  .internal-label { display:block; color: var(--ink-soft); font-size:0.72rem; margin-bottom:3px; }
+  .internal-value { font-family: var(--font-mono); font-weight:600; color: var(--ink); }
+
+  /* ===== TARJETA DE HOSTING ===== */
+  .hosting-grid { display:flex; gap:16px; flex-wrap:wrap; margin-top:6px; }
+  .hosting-box {
+    flex:1; min-width:140px; background: var(--paper); border:1px solid var(--line); border-radius:10px;
+    padding:16px; text-align:center;
+  }
+  .hosting-box .hb-label { font-family: var(--font-mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; color: var(--ink-soft); display:block; margin-bottom:6px; }
+  .hosting-box .hb-value { font-family: var(--font-display); font-size:1.35rem; font-weight:800; }
+  .hosting-box.total { background: var(--accent-soft); border-color: var(--accent); }
+  .hosting-box.total .hb-value { color: var(--accent-deep); }
+
+  .hosting-conditions { margin-top:22px; }
+  .hosting-conditions ul { list-style:none; display:flex; flex-direction:column; gap:8px; }
+  .hosting-conditions li { padding-left:22px; position:relative; font-size:0.92rem; }
+  .hosting-conditions li::before { content:'▸'; position:absolute; left:0; color: var(--blueprint); }
+
+  /* ===== FOOTER ===== */
+  footer { margin-top:40px; padding-top:24px; border-top:1px solid var(--line); font-size:0.82rem; color: var(--ink-soft); text-align:center; }
+  footer p { margin-bottom:6px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <span class="eyebrow">Catálogo de servicios · Desarrollo Web</span>
+    <h1>Planos de tu próximo proyecto</h1>
+    <p>Cada servicio incluye qué resuelve, cómo se desarrolla y su precio total. El desglose interno (desarrolladores / agencia) está disponible para consulta propia.</p>
+  </header>
+
+  <!-- ===================== LEYENDA ===================== -->
+  <div class="legend">
+    <div class="legend-item">
+      <span class="ico">💰</span>
+      <div><strong>Precio mostrado</strong>Es el total que paga el cliente final, listo para cotizar.</div>
+    </div>
+    <div class="legend-item">
+      <span class="ico">🧭</span>
+      <div><strong>Fases de desarrollo</strong>El orden en que avanza el proyecto, de inicio a publicación.</div>
+    </div>
+    <div class="legend-item">
+      <span class="ico">🔒</span>
+      <div><strong>Desglose interno</strong>Sección colapsable con la división 70% / 30% entre desarrolladores y agencia — solo para uso propio.</div>
+    </div>
+  </div>
+
+  <!-- ===================== ÍNDICE ===================== -->
+  <nav class="toc">
+    <a href="#landings">Páginas de aterrizaje</a>
+    <a href="#sitios">Sitios web</a>
+    <a href="#tiendas">Tiendas en línea</a>
+    <a href="#hosting">Hosting y dominio</a>
+  </nav>
+
+  <!-- ===================== 01 · PÁGINAS DE ATERRIZAJE ===================== -->
+  <section class="category" id="landings">
+    <div class="category-head">
+      <span class="cat-index">01</span>
+      <h2>Páginas de aterrizaje</h2>
+    </div>
+
+    <!-- Landing básica -->
+    <article class="card" data-base="2500">
+      <span class="ref-code">WEB-01</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Landing Page básica</h3>
+          <span class="time-badge">⏱ 2–4 días</span>
+          <p class="desc">Una página enfocada en un solo objetivo: que el visitante haga clic, compre, se registre o te contacte.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo la necesitas?</h4>
+        <ul>
+          <li>Vas a lanzar una promoción, producto o evento y necesitas una página dedicada para ese fin.</li>
+          <li>Quieres dirigir tráfico de anuncios (redes sociales, Google) a un solo lugar con un mensaje claro.</li>
+          <li>Necesitas validar una idea de negocio antes de invertir en un sitio completo.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Brief y referencias</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño de la página</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo y contenido</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Revisión y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Landing premium -->
+    <article class="card" data-base="4500">
+      <span class="ref-code">WEB-02</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Landing Page premium</h3>
+          <span class="time-badge">⏱ 4–6 días</span>
+          <p class="desc">Una página de aterrizaje con mayor cuidado visual, animaciones y formularios conectados a tus herramientas de marketing.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo la necesitas?</h4>
+        <ul>
+          <li>Tu marca necesita una primera impresión más sofisticada, con animaciones y microinteracciones.</li>
+          <li>Quieres capturar leads directamente en tu correo, CRM o lista de WhatsApp.</li>
+          <li>Vas a invertir en publicidad y necesitas una página que convierta mejor.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Estrategia y diseño</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Maquetación visual avanzada</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo con animaciones</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Integración de formularios</span></li>
+          <li><span class="phase-num">5</span><span class="phase-name">Pruebas y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+  </section>
+
+  <!-- ===================== 02 · SITIOS WEB ===================== -->
+  <section class="category" id="sitios">
+    <div class="category-head">
+      <span class="cat-index">02</span>
+      <h2>Sitios web</h2>
+    </div>
+
+    <!-- Sitio básico -->
+    <article class="card" data-base="6000">
+      <span class="ref-code">WEB-03</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Sitio web básico <small style="font-weight:400; color:var(--ink-soft);">(hasta 5 secciones)</small></h3>
+          <span class="time-badge">⏱ 1 semana</span>
+          <p class="desc">Un sitio con las secciones esenciales para presentar tu negocio: inicio, servicios, nosotros y contacto.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Tu negocio aún no tiene presencia en internet o tu sitio actual ya no transmite profesionalismo.</li>
+          <li>Necesitas un lugar donde los clientes confirmen quién eres, qué ofreces y cómo contactarte.</li>
+          <li>Buscas algo simple, claro y fácil de mantener.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Descubrimiento y contenido</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño visual</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Revisión y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Sitio empresarial -->
+    <article class="card" data-base="8500">
+      <span class="ref-code">WEB-04</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Sitio web empresarial <small style="font-weight:400; color:var(--ink-soft);">(hasta 10 secciones)</small></h3>
+          <span class="time-badge">⏱ 1–2 semanas</span>
+          <p class="desc">Un sitio más amplio para empresas con varias áreas, servicios o equipos que necesitan su propio espacio.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Tu empresa tiene varias líneas de negocio, sucursales o departamentos que necesitan visibilidad propia.</li>
+          <li>Necesitas proyectar solidez frente a clientes corporativos, inversionistas o licitaciones.</li>
+          <li>Buscas una estructura más completa: equipo, casos de éxito, certificaciones, etc.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Arquitectura del sitio</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño visual</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Carga de contenido</span></li>
+          <li><span class="phase-num">5</span><span class="phase-name">Revisión y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Sitio con blog -->
+    <article class="card" data-base="10000">
+      <span class="ref-code">WEB-05</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Sitio web con blog</h3>
+          <span class="time-badge">⏱ 1–2 semanas</span>
+          <p class="desc">Un sitio con un espacio de blog integrado para publicar contenido propio de forma regular.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Quieres atraer visitantes con contenido (artículos, noticias, guías) y mejorar tu posición en buscadores.</li>
+          <li>Tu estrategia de marketing incluye publicar contenido de forma constante.</li>
+          <li>Necesitas que alguien de tu equipo pueda publicar nuevas entradas sin ayuda técnica.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Descubrimiento y estructura</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño visual</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo y configuración del blog</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Carga de contenido inicial</span></li>
+          <li><span class="phase-num">5</span><span class="phase-name">Revisión y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Rediseño -->
+    <article class="card" data-base="5000" data-desde="true">
+      <span class="ref-code">WEB-06</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Rediseño de sitio web</h3>
+          <span class="time-badge">⏱ 1–2 semanas</span>
+          <p class="desc">Renovamos el diseño, la velocidad y la experiencia de tu sitio actual, conservando lo que ya funciona.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión desde</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Tu sitio se ve anticuado o no se adapta bien a celulares.</li>
+          <li>Tu sitio es lento o ya no representa a tu marca actual.</li>
+          <li>Quieres mejorar sin perder tu contenido, posicionamiento o dirección web actuales.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Auditoría del sitio actual</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Nueva propuesta de diseño</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo y migración de contenido</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Revisión y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+  </section>
+
+  <!-- ===================== 03 · TIENDAS EN LÍNEA ===================== -->
+  <section class="category" id="tiendas">
+    <div class="category-head">
+      <span class="cat-index">03</span>
+      <h2>Tiendas en línea</h2>
+    </div>
+
+    <!-- Ecommerce básico -->
+    <article class="card" data-base="15000">
+      <span class="ref-code">WEB-07</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Ecommerce básico</h3>
+          <span class="time-badge">⏱ 2–3 semanas</span>
+          <p class="desc">Una tienda en línea con catálogo de productos, carrito de compras y pagos integrados.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Quieres vender tus productos en línea sin depender solo de redes sociales.</li>
+          <li>Tu catálogo es pequeño o mediano y estás comenzando a vender por internet.</li>
+          <li>Necesitas que el cliente pague directamente en el sitio (tarjeta, transferencia, etc.).</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Planeación del catálogo</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño de la tienda</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo: catálogo, carrito y pagos</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Configuración de envíos y pagos</span></li>
+          <li><span class="phase-num">5</span><span class="phase-name">Pruebas y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Ecommerce intermedio -->
+    <article class="card" data-base="25000">
+      <span class="ref-code">WEB-08</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Ecommerce intermedio</h3>
+          <span class="time-badge">⏱ 1 mes</span>
+          <p class="desc">Una tienda más robusta, pensada para catálogos más grandes con variantes, cupones y mayor capacidad de crecimiento.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Tu catálogo incluye variantes (tallas, colores, modelos) que necesitan gestionarse de forma ordenada.</li>
+          <li>Quieres ofrecer cupones, promociones o descuentos por volumen.</li>
+          <li>Ya vendes en línea y necesitas una tienda más escalable y completa.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Planeación y estructura</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño de la tienda</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo de la tienda</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Integraciones avanzadas</span></li>
+          <li><span class="phase-num">5</span><span class="phase-name">Pruebas integrales</span></li>
+          <li><span class="phase-num">6</span><span class="phase-name">Publicación y capacitación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+
+    <!-- Catálogo en línea -->
+    <article class="card" data-base="8000">
+      <span class="ref-code">WEB-09</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Catálogo en línea <small style="font-weight:400; color:var(--ink-soft);">(sin pagos)</small></h3>
+          <span class="time-badge">⏱ 1–2 semanas</span>
+          <p class="desc">Un catálogo digital con buena presentación de tus productos o servicios, sin pagos en línea: el cierre de venta se hace por WhatsApp, llamada o en persona.</p>
+        </div>
+        <div class="price-tag">
+          <span class="price-label">Inversión total</span>
+          <span class="price-value"></span>
+          <span class="price-unit">MXN</span>
+        </div>
+      </div>
+
+      <div class="needs">
+        <h4>¿Cuándo lo necesitas?</h4>
+        <ul>
+          <li>Quieres mostrar tu catálogo de forma profesional sin necesidad de procesar pagos en línea.</li>
+          <li>Tus ventas se cierran por cotización, WhatsApp o trato directo con el cliente.</li>
+          <li>Buscas algo más visual y completo que un catálogo en PDF.</li>
+        </ul>
+      </div>
+
+      <div class="timeline">
+        <h4>Fases de desarrollo</h4>
+        <ol class="phases">
+          <li><span class="phase-num">1</span><span class="phase-name">Organización del catálogo</span></li>
+          <li><span class="phase-num">2</span><span class="phase-name">Diseño visual</span></li>
+          <li><span class="phase-num">3</span><span class="phase-name">Desarrollo</span></li>
+          <li><span class="phase-num">4</span><span class="phase-name">Revisión y publicación</span></li>
+        </ol>
+      </div>
+
+      <details class="internal">
+        <summary>Desglose interno (agencia)</summary>
+        <div class="internal-grid">
+          <div><span class="internal-label">Desarrolladores (70%)</span><span class="internal-value dev"></span></div>
+          <div><span class="internal-label">Agencia (30%)</span><span class="internal-value agency"></span></div>
+          <div><span class="internal-label">Precio base agencia</span><span class="internal-value base"></span></div>
+        </div>
+      </details>
+    </article>
+  </section>
+
+  <!-- ===================== 04 · HOSTING Y DOMINIO ===================== -->
+  <section class="category" id="hosting">
+    <div class="category-head">
+      <span class="cat-index">04</span>
+      <h2>Hosting y dominio</h2>
+    </div>
+
+    <article class="card">
+      <span class="ref-code">HOST-01</span>
+      <div class="card-top">
+        <div class="card-info">
+          <h3>Hosting personal</h3>
+          <span class="time-badge">⏱ Servicio mensual</span>
+          <p class="desc">Mantenemos tu sitio en línea, funcionando y disponible las 24 horas. Se ofrece como servicio aparte, independiente del desarrollo del sitio.</p>
+        </div>
+      </div>
+
+      <div class="hosting-grid">
+        <div class="hosting-box">
+          <span class="hb-label">Desarrolladores</span>
+          <span class="hb-value" id="hosting-dev"></span>
+        </div>
+        <div class="hosting-box">
+          <span class="hb-label">Agencia</span>
+          <span class="hb-value" id="hosting-agency"></span>
+        </div>
+        <div class="hosting-box total">
+          <span class="hb-label">Total cliente / mes</span>
+          <span class="hb-value" id="hosting-total"></span>
+        </div>
+      </div>
+
+      <div class="hosting-conditions">
+        <h4 style="font-family:var(--font-mono); font-size:0.74rem; text-transform:uppercase; letter-spacing:1.5px; color:var(--blueprint); margin-bottom:10px;">Condiciones del dominio</h4>
+        <ul>
+          <li>El nombre de dominio queda <strong>cubierto durante los primeros 3 meses</strong> del servicio de hosting.</li>
+          <li>Si el cliente final requiere un dominio cuyo costo no se cubre con ese monto, la diferencia se <strong>externaliza directamente al cliente final</strong>.</li>
+          <li>A partir del cuarto mes, el cliente continúa pagando únicamente la cuota mensual de hosting.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <p>Precios en MXN. No incluyen IVA. Los tiempos estimados pueden variar según la complejidad del proyecto.</p>
+    <p>Documento editable — los precios se calculan automáticamente a partir del valor <code>data-base</code> de cada tarjeta.</p>
+  </footer>
+
+</div>
+
+<script>
+  // ============================================================
+  // CONFIGURACIÓN — EDITA AQUÍ
+  // ============================================================
+  const DEV_PCT     = 0.70;  // % para desarrolladores (servicios de desarrollo)
+  const AGENCIA_PCT = 0.30;  // % para la agencia (servicios de desarrollo)
+
+  const DEV_HOSTING     = 180; // $ fijo mensual para desarrolladores
+  const AGENCIA_HOSTING = 100; // $ fijo mensual para agencia
+  // ============================================================
+
+  const fmt = (n, desde = false) =>
+    (desde ? 'Desde ' : '') +
+    '$' + Math.round(n).toLocaleString('es-MX', { minimumFractionDigits: 0 });
+
+  const fmtPlain = (n) =>
+    '$' + Math.round(n).toLocaleString('es-MX', { minimumFractionDigits: 0 });
+
+  const ceilHundreds = (n) => Math.ceil(n / 100) * 100;
+
+  // Servicios de desarrollo (70/30)
+  document.querySelectorAll('.card[data-base]').forEach(card => {
+    const base   = parseFloat(card.dataset.base);
+    const desde  = card.dataset.desde === 'true';
+    const dev    = base * DEV_PCT;
+    const agency = base * AGENCIA_PCT;
+    const client = ceilHundreds(base * (1 + AGENCIA_PCT));
+
+    const priceEl = card.querySelector('.price-value');
+    if (priceEl) priceEl.textContent = fmt(client, desde);
+
+    const devEl    = card.querySelector('.internal-value.dev');
+    const agencyEl = card.querySelector('.internal-value.agency');
+    const baseEl   = card.querySelector('.internal-value.base');
+    if (devEl)    devEl.textContent    = fmtPlain(dev) + ' MXN';
+    if (agencyEl) agencyEl.textContent = fmtPlain(agency) + ' MXN';
+    if (baseEl)   baseEl.textContent   = fmtPlain(base) + ' MXN';
+  });
+
+  // Hosting (montos fijos)
+  document.getElementById('hosting-dev').textContent    = fmtPlain(DEV_HOSTING) + ' MXN';
+  document.getElementById('hosting-agency').textContent = fmtPlain(AGENCIA_HOSTING) + ' MXN';
+  document.getElementById('hosting-total').textContent  = fmtPlain(DEV_HOSTING + AGENCIA_HOSTING) + ' MXN';
+</script>
+</body>
+</html>

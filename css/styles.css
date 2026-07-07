@@ -14,7 +14,7 @@ css
 ========================= */
 
 :root {
-  --bg-color: #d6d6d6;
+  --bg-color: #ffffff;
   --bg-secondary: #e8e8e8;
 
   --text-color: #111111;
@@ -22,8 +22,8 @@ css
   --card-bg: rgba(255,255,255,0.08);
   --nav-bg: rgba(255,255,255,0.06);
 
-  --accent-color: #24d7eb;
-  --accent-secondary: #6f7dff;
+  --accent-color: #00bcc6;
+  --accent-secondary: #0414a2;
 
   --muted-text: #5f6670;
 
@@ -43,7 +43,7 @@ body.dark-mode {
   --card-bg: rgba(255,255,255,0.05);
   --nav-bg: rgba(255,255,255,0.04);
 
-  --accent-color: #00ccff;
+  --accent-color: #28a9ca;
   --accent-secondary: #3a47bd;
 
   --muted-text: #a8b0c2;
@@ -253,8 +253,6 @@ header {
 
   text-decoration: none;
 }
-
-
 
 .search-container {
   display: flex;

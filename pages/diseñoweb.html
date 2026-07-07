@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/elements.css">
   <link rel="stylesheet" href="../css/web.css">
+  <link rel="stylesheet" href="../css/carrusel.css">
 </head>
 <body>
 
@@ -52,12 +53,20 @@
     </div>
 
     <div class="project-card">
-      <img src="../public/img/SENSI-WEB-COVER.jpg" alt="Proyecto Delya" loading="lazy" width="400" height="400">
+  <div class="logo-carousel">
+    <img src="../public/img/SENSI-WEB-COVER.jpg" alt="Logo Sensi Home" class="active" loading="lazy">
+    <img src="../public/img/paginaproducto.png" alt="Mockup Sensi Home" loading="lazy">
+    <img src="../public/img/galeriaproductosensi.png" alt="Mockup Sensi Home" loading="lazy">
+    <img src="../public/img/homesensi.png" alt="Mockup Sensi Home" loading="lazy">
+    <!-- Botones de navegación -->
+    <button class="carousel-btn prev" aria-label="Imagen anterior">⟨</button>
+    <button class="carousel-btn next" aria-label="Imagen siguiente">⟩</button>
+  </div>
       <div class="project-info">
         <h2>Sensi Home</h2>
         <p>Web modular con enfoque responsivo y optimización de UX.</p>
         <span class="stack">Stack: React, Node.js</span>
-        <a href="https://compe2001.github.io/Respaldo-sensihome/" target="_blank" class="demo-btn">Ver demo</a>
+        <a href="https://sensi.angrub.xyz" target="_blank" class="demo-btn">Ver demo</a>
       </div>
     </div>
   </section>
@@ -69,6 +78,7 @@
 
 <script src="../js/searchbar.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/carrusel.js"></script>s
 
 </body>
 </html>
