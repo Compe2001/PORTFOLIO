@@ -6,8 +6,9 @@
   <meta name="description" content="Portafolio de Casiel Nicolás Rodríguez Vázquez, diseñador gráfico y web.">
   <title>Creative Developer</title>
   <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/preloader.css">
-    <link rel="stylesheet" href="css/PG.CSS">
+  <link rel="stylesheet" href="css/preloader.css">
+  <link rel="stylesheet" href="css/PG.css">
+  <link rel="stylesheet" href="css/hero.css">
 </head>
 <body>
 <div id="preloader">
@@ -43,26 +44,76 @@
 </nav>
     
 <main>
-  <h1 class="welcome">Bienvenido a mi portafolio</h1>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="inicio">
+
+    <div class="hero__spotlight" aria-hidden="true"></div>
+
     <div class="hero-image">
-      <img class="profile-image" src="public/img/yo-merengues.webp" alt="Foto de perfil de Casiel Nicolás Rodríguez Vázquez">
+      <img
+        class="profile-image"
+        src="public/img/yo-merengues.webp"
+        alt="Foto de perfil de Casiel Nicolás Rodríguez Vázquez"
+      >
     </div>
+
     <div class="hero-description">
-      <h2>Descargar CV</h2>
-      <button class="cvbtn">
-        <a href="public/docs/CV_Casiel_Rodriguez-4.pdf" class="logo-home" download>Descargar CV</a>
-      </button>
-      <p>
-        Hola, soy Casiel Nicolás Rodríguez Vázquez. Diseñador gráfico y desarrollador web especializado en frontend. 
-        Me dedico a crear soluciones gráficas, audiovisuales y digitales para proyectos, startups y empresas.
+
+      <span class="badge">
+        <span class="badge__dot"></span>
+        Disponible para nuevos proyectos
+      </span>
+
+      <h1 class="hero__title">
+        Diseño y construyo<br>
+        experiencias que<br>
+        <span class="rotator-wrap">
+          <span class="rotator" id="rotator">se mueven</span>
+        </span>
+      </h1>
+
+      <p class="hero__lead">
+        Hola, soy <strong>Casiel Nicolás Rodríguez Vázquez</strong>. Diseñador gráfico
+        y desarrollador web especializado en frontend. Creo soluciones gráficas,
+        audiovisuales y digitales para proyectos, startups y empresas — desde la
+        identidad de marca hasta el código que la hace funcionar.
       </p>
+
+      <div class="cta">
+        <a href="public/docs/CV_Casiel_Rodriguez-4.pdf" class="cvbtn" download>
+          Descargar CV
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
+        <a href="pages/proyectos.html" class="btn-ghost">
+          Ver proyectos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+
+      <ul class="stats">
+        <li>
+          <span class="stat__num">+5</span>
+          <span class="stat__label">Años de experiencia</span>
+        </li>
+        <li>
+          <span class="stat__num">+80</span>
+          <span class="stat__label">Proyectos entregados</span>
+        </li>
+        <li>
+          <span class="stat__num">+30</span>
+          <span class="stat__label">Marcas acompañadas</span>
+        </li>
+      </ul>
+
     </div>
   </section>
 
-  <!-- Galería -->
+  <!-- ========== GALERÍA (la tuya, sin cambios) ========== -->
   <section class="about-me">
     <h2 class="gallery-title">Galería</h2>
     <section class="gallery">
@@ -119,6 +170,7 @@
 
     </section>
   </section>
+
 </main>
 
 <footer>
